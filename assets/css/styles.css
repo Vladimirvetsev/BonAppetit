@@ -1,0 +1,88 @@
+body {
+    background-color: rgb(9,48,15);
+    padding: 1em;
+    font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+}
+
+#wrapper {
+    width: 1165px;
+    margin: auto;
+}
+
+@media screen and (max-width: 1165px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+
+header {
+    box-sizing: border-box;
+    display: block;
+    background-color: khaki;
+    padding: 0.5em;
+    height: 150px;
+    margin: 0.5em;
+    border-radius: 1em;
+}
+
+header>div#logo {
+    width: 200px;
+    float: left;
+    margin: 30px;
+    
+}
+
+header>div#login-form {
+    display: inline-block;
+    float: right;
+}
+#facebook-logo {
+    width: 30px;
+}
+
+header nav ul li:hover {
+    background-color:rgb(9,48,15);
+    color: whitesmoke;
+    border-radius: 2em;
+}
+
+header nav ul>li {
+    display: inline-block;
+    width: 13%;
+    font-size: 1.5em;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: 30px;
+    border-bottom: 2px solid green;
+    border-top: 2px solid green;
+}
+
+main {
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: khaki;
+    padding: 0.5em;
+    height: 300px;
+    margin: 0.5em;
+    border-radius: 1em;
+}
+
+aside {
+    box-sizing: border-box;
+    display: inline-block;
+    background-color: khaki;
+    padding: 0.5em;
+    height: 300px;
+    margin: 0.5em;
+    float: left;
+    border-radius: 1em;
+}
+
+footer {
+    box-sizing: border-box;
+    display: block;
+    background-color: khaki;
+    padding: 0.5em;
+    margin: 0.5em;
+    border-radius: 1em;
+}
