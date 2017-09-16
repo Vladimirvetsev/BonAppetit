@@ -15,11 +15,28 @@
             <!--Recipe search engine Option1  -->
             <!--Optional div for image,logo and so on.  -->
             <div id='logo'><img src='assets/images/logo.png' alt='logo' /></div>
-            <div id='login-form'>
-                <img id='facebook-logo' src="assets/images/facebook-icon.png" alt="Login with facebook" />
-                <button id='login'>Вход</button>
-                <button id='registration'>Регистрация</button>
+            <div onclick="hideLogInForm()" id='login-form'>
+                <div id='login-content'>
+                <form action="#">
+                    <input type="text" name='Name' placeholder="Name:"></br>
+                    <input type="password" name='Password' placeholder="Password:">
+                </form>
+                </div>
             </div>
+                <button onclick='showLogInForm()' id='login'>Вход</button>
+            <div onclick="hideRegForm()" id='reg-form'>
+                <div id='reg-content'>
+                    <form action="#">
+                    <input type="text" name='Name' placeholder="Username:"></br>
+                    <input type="text" name='Name' placeholder="Email:"></br>
+                    <input type="password" name='Password' placeholder="Password:"></br>
+                    <input type="password" name='Password' placeholder="Repeat password:">
+                </form>
+                </div>
+            </div>
+                <button onclick='showRegForm()'id='registration'>Регистрация</button>
+                <img id='facebook-logo' src="assets/images/facebook-icon.png" alt="Login with facebook" />
+                <script src='assets/javascript/demo.js'></script>
             <!--Navigaton menu.-->
             <nav>
                 <ul>
