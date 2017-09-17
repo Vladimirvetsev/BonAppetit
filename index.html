@@ -42,7 +42,7 @@
             <nav>
                 <ul>
                     <li>Начало</li>
-                    <li>Рецепти</li>
+                    <li><a onclick="openRecipes()" href="#findRecipe">Рецепти</a></li>
                     <li>Тема на седмицата</li>
                     <!--Hidden unless the user is logged in  -->
                     <li>Любими Рецепти</li>
@@ -59,11 +59,23 @@
                 <div class='slide'><img src="assets/images/pile-s-zelenchuci.jpeg" alt=""></div>
                 <div class='slide'><img src="assets/images/siomga-s-kopur.jpeg" alt=""></div>  
             </section>
-             <section id=''>
-                <article></article>
-                <article></article>
-                <article></article>
-                <article></article>
+             <section id='findRecipe'>
+                <h2>По какъв начин желаете да търсите рецепта</h2>
+                    <ul>
+                        <li><button onclick="openNameSearch()">Търси по име</button></li>
+                        <li onclick="openProductSearch()">Търси по продукти</li>
+                        <li onclick="openNeshtoDrugoSearch()">Търси по нещо друго</li>
+                    </ul>
+                <article class='recipes' id='recipe-Name'>
+                    <h3>Някво заглавие</h3>
+                        <input id='tursachka' type="text" placeholder="Search"><button onclick="tursi()">Търси</button>
+                </article>
+                <article  class='recipes' id='recipe-Product'>
+                    <h3>Някво заглавие</h3>
+                </article>
+                <article class='recipes' id="recipe-origin">
+                    <h3>Някво заглавие</h3>
+                </article>
             </section>
             <!--<section>
                 <article></article>
