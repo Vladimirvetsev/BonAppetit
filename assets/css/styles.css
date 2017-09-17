@@ -92,21 +92,33 @@ header nav ul>li {
 }
 
 main {
-    box-sizing: border-box;
     display: inline-block;
     background-color: khaki;
     padding: 0.5em;
-    height: 300px;
     margin: 0.5em;
     border-radius: 1em;
+    width: 76%;
 }
-
+#lastWeek{
+    height: 500px;
+}
+.slide{
+    background-color: lightblue;
+    margin:50px;
+    display: block;
+    position: absolute;
+    width: 40%;
+    height: 240px;
+}
+.slide img{
+    height: 240px;
+    width: 100%;
+}
 aside {
-    box-sizing: border-box;
+    
     display: inline-block;
     background-color: khaki;
     padding: 0.5em;
-    height: 300px;
     margin: 0.5em;
     float: left;
     border-radius: 1em;
