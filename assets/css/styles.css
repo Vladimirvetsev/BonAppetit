@@ -116,6 +116,12 @@ main {
     width: 100%;
     
 }
+.recipes{
+    display: none;
+}
+#findRecipe{
+    display: none;
+}
 aside {
     
     display: inline-block;
