@@ -27,10 +27,11 @@
             <div onclick="hideRegForm()" id='reg-form'>
                 <div id='reg-content'>
                     <form action="#">
-                        <input type="text" name='Name' placeholder="Username:"></br>
-                        <input type="text" name='Name' placeholder="Email:"></br>
-                        <input type="password" name='Password' placeholder="Password:"></br>
-                        <input type="password" name='Password' placeholder="Repeat password:">
+                        <input id='username' type="text" name='Name'placeholder="Username:"></br>
+                        <input id='email' type="text" name='email' placeholder="Email:"></br>
+                        <input id='password' type="password" name='Password' placeholder="Password:"></br>
+                        <input id='passwordDve' type="password" name='RepeatPassword' placeholder="Repeat password:">
+                        <input onclick="create()" type="submit" value="user"/>
                     </form>
                 </div>
             </div>
@@ -53,19 +54,18 @@
         <main>
             <!--Yet to be optimized(SPA)  -->
             <section id="lastWeek">
-                <div class='slide'><img src="assets/images/pile-s-zelenchuci.jpeg" alt=""></div>
+                  <div class='slide'><img src="assets/images/pile-s-zelenchuci.jpeg" alt=""></div>
                 <div class='slide'><img src="assets/images/siomga-s-kopur.jpeg" alt=""></div>
                 <div class='slide'><img src="assets/images/pile-s-zelenchuci.jpeg" alt=""></div>
-                <div class='slide'><img src="assets/images/siomga-s-kopur.jpeg" alt=""></div>
+                <div class='slide'><img src="assets/images/siomga-s-kopur.jpeg" alt=""></div>  
             </section>
-            <!-- <script src='assets/javascript/demo.js'></script> -->
-            <!-- <section>
+             <section id=''>
                 <article></article>
                 <article></article>
                 <article></article>
                 <article></article>
             </section>
-            <section>
+            <!--<section>
                 <article></article>
                 <article></article>
                 <article></article>
