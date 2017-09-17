@@ -28,18 +28,58 @@ function slideShow(){
 slideShow();
 
 
-function NewUser(ime, parola, parolaDve){
-    this.ime=ime;
-    this.parola=parola;
-    this.parolaDve=parolaDve
-}
+// function NewUser(ime, parola, parolaDve){
+//     this.ime=ime;
+//     this.parola=parola;
+//     this.parolaDve=parolaDve
+// }
 
 
-function create(){
-    var name=document.getElementById('username').value;
-    var pass = document.getElementById('password').value
-    var passDve=document.getElementById('passwordDve').value;
+// function create(){
+//     // Първия път излезе в конзолата....
+//     var name=document.getElementById('username').value;
+//     var pass = document.getElementById('password').value
+//     var passDve=document.getElementById('passwordDve').value;
     
-    var person= new NewUser(name,pass,passDve);
-    console.log(person);
+//     var person= new NewUser(name,pass,passDve);
+//     console.log(person);
+// }
+
+function openRecipes(){
+    document.getElementById('findRecipe').style.display='block';
 }
+function openNameSearch(){
+    document.getElementById('recipe-Name').style.display='block';
+}
+ var recipeList=[];
+function Recipe(name){
+    this.name=name;
+}
+Recipe.prototype.dobaviRecepta=function(){
+    recipeList.push(this);
+}
+var bob=new Recipe('bob');
+var nahut=new Recipe('nahut');
+var leshta=new Recipe('leshta');
+var mahut=new Recipe('mahut');
+
+bob.dobaviRecepta();
+nahut.dobaviRecepta();
+leshta.dobaviRecepta();
+
+
+function searchRecipe(recipe){
+   for(var i=0;i<recipeList.length; i++){
+       if(recipeList[i].name===recipe){
+            document.write(`
+                <p>${recipeList[i].name}</p>
+            `)
+       }
+   }
+}
+
+function tursi(){
+    var x=document.getElementById('tursachka').value;
+    searchRecipe(x);
+}
+
