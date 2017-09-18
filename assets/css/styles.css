@@ -15,6 +15,7 @@ body {
     }
 }
 
+/* Header style */
 header {
     box-sizing: border-box;
     display: block;
@@ -25,11 +26,10 @@ header {
     border-radius: 1em;
 }
 
-header>div#logo {
+header div#logo {
     width: 200px;
     float: left;
-    margin: 30px;
-    
+    margin: 30px;  
 }
 
 
@@ -92,6 +92,7 @@ header nav ul>li {
     border-top: 2px solid green;
 }
 
+/* Main style */
 main {
     display: inline-block;
     background-color: khaki;
@@ -122,8 +123,9 @@ main {
 #findRecipe{
     display: none;
 }
+
+/* Aside style */
 aside {
-    
     display: inline-block;
     background-color: khaki;
     padding: 0.5em;
@@ -132,6 +134,7 @@ aside {
     border-radius: 1em;
 }
 
+/* Footer style */
 footer {
     box-sizing: border-box;
     display: block;
@@ -139,4 +142,29 @@ footer {
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 1em;
+    display: inline-block;
+    width: 100%;
+}
+
+footer article {
+    display: inline-block;
+    float: left;
+    margin: 10px 50px;
+    text-align: center;
+}
+
+footer article ul li a {
+    text-decoration: none;
+}
+footer article ul li {
+    list-style: none;
+}
+footer article>img#location-map {
+    width: 350px;
+    border: 1px solid forestgreen;
+}
+footer article>img.social-media {
+    width: 50px;
+    border-radius: 1em;
+    margin-bottom: 10px; 
 }
