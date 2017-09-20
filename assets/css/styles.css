@@ -35,7 +35,7 @@ header div#logo {
 
 header>div#login-form {
     background-color: gray;
-    opacity: 1;
+    opacity: 0.95;
     display: none;
     width: 100%;
     height: 100%;
@@ -45,16 +45,27 @@ header>div#login-form {
     top:0;
 }
 header>div>div#login-content{
-    height: 250px;
-    width: 500px;
+    height: 490px;
+    width: 420px;
     top:20%;
     left:35%;
-    position: fixed;
+    position: absolute;
     background-color: white;
+    border-radius: 1em;
+}
+header>div>div#reg-content{
+    height: 490px;
+    width: 420px;
+    top:20%;
+    left:35%;
+    position: absolute;
+
+    background-color: white;
+    border-radius: 1em;
 }
 header>div#reg-form {
     background-color: gray;
-    opacity: 1;
+    opacity: 0.97;
     display: none;
     width: 100%;
     height: 100%;
@@ -62,13 +73,45 @@ header>div#reg-form {
     left:0;
     top:0;
 }
-header>div>div#reg-content{
-    height: 250px;
-    width: 500px;
-    top:20%;
-    left:35%;
-    position: absolute;
-    background-color: white;
+.closeIcon{
+    width:25px;
+    float: right;
+    margin: 1em;
+}
+.form-Content{
+    padding-top:40px;
+    padding-left:25%;
+}
+.form-Heading{
+    border-bottom: 1px solid gray;
+    text-align: center;
+    font-size: 2em;
+    padding-bottom: 12px;
+    font-family:'Raleway',sans-serif
+    
+}
+.form-Content> input[type=text], input[type=password]{
+    padding: 12px;
+    margin-top: 6px;
+    width: 200px;
+    height: 25px;
+}
+.form-Content> input[type=checkbox]{
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+#enetr-accout{
+    border: none;
+    background-color: rgba(0,0,0,0.7);
+    text-align: center;
+    width: 228px;
+    margin-top: 6px;
+    height: 50px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    box-shadow: 10px 10px 5px #888888;
+
 }
 
 #facebook-logo {
