@@ -15,27 +15,33 @@
             <!--Recipe search engine Option1  -->
             <!--Optional div for image,logo and so on.  -->
             <div id='logo'><img src='assets/images/logo.png' alt='logo' /></div>
-            <div onclick="hideLogInForm()" id='login-form'>
+            <div  id='login-form'>
                 <div id='login-content'>
-                    <form action="#">
-                        <input type="text" name='Name' placeholder="Name:"></br>
-                        <input type="password" name='Password' placeholder="Password:">
+                    <img class='closeIcon' src="assets/images/close.png" alt="close icon">
+                    <h2 class='form-Heading'>Вход</h2>
+                    <form class='form-Content' action="#">
+                        <input type="text" name='Name' placeholder="Потребител:"></br>
+                        <input type="password" name='Password' placeholder="Парола:"></br>
+                        <input type="checkbox" value="Запомни ме"/><span>Запомни ме</span></br>
+                        <button id='enetr-accout'>Влез</button>
                     </form>
                 </div>
             </div>
-            <button onclick='showLogInForm()' id='login'>Вход</button>
-            <div onclick="hideRegForm()" id='reg-form'>
+            <button id='login'>Вход</button>
+            <div  id='reg-form'>
                 <div id='reg-content'>
-                    <form action="#">
-                        <input id='username' type="text" name='Name' placeholder="Username:"></br>
-                        <input id='email' type="text" name='email' placeholder="Email:"></br>
-                        <input id='password' type="password" name='Password' placeholder="Password:"></br>
-                        <input id='passwordDve' type="password" name='RepeatPassword' placeholder="Repeat password:">
-                        <input onclick="create()" type="submit" value="user" />
+                    <img class='closeIcon' src="assets/images/close.png" alt="close icon">
+                    <h2 class='form-Heading'>Регистрация</h2>
+                    <form class='form-Content' action="#">
+                        <input  type="text" name='Name' placeholder="Username:"></br>
+                        <input  type="text" name='email' placeholder="Email:"></br>
+                        <input  type="password" name='Password' placeholder="Password:"></br>
+                        <input  type="password" name='RepeatPassword' placeholder="Repeat password:"><br>
+                        <input  type="submit" value="user" />
                     </form>
                 </div>
             </div>
-            <button onclick='showRegForm()' id='registration'>Регистрация</button>
+            <button  id='registration'>Регистрация</button>
             <img id='facebook-logo' src="assets/images/facebook-icon.png" alt="Login with facebook" />
             <script src='assets/javascript/demo.js'></script>
             <!--Navigaton menu.-->
@@ -53,12 +59,12 @@
         </header>
         <main>
             <!--Yet to be optimized(SPA)  -->
-            <section id="lastWeek">
+            <!-- <section id="lastWeek">
                 <div class='slide'><img src="assets/images/pile-s-zelenchuci.jpeg" alt=""></div>
                 <div class='slide'><img src="assets/images/siomga-s-kopur.jpeg" alt=""></div>
                 <div class='slide'><img src="assets/images/pile-s-zelenchuci.jpeg" alt=""></div>
                 <div class='slide'><img src="assets/images/siomga-s-kopur.jpeg" alt=""></div>
-            </section>
+            </section> -->
             <section id='findRecipe'>
                 <h2>По какъв начин желаете да търсите рецепта</h2>
                 <ul>
