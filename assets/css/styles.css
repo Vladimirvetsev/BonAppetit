@@ -40,6 +40,7 @@ header>div#login-form {
     width: 100%;
     height: 100%;
     position: fixed;
+    z-index: 1;
     overflow: hidden;
     left:0;
     top:0;
@@ -57,8 +58,10 @@ header>div>div#reg-content{
     height: 490px;
     width: 420px;
     top:20%;
+    
     left:35%;
     position: absolute;
+    z-index: 1;
 
     background-color: white;
     border-radius: 1em;
@@ -70,6 +73,7 @@ header>div#reg-form {
     width: 100%;
     height: 100%;
     position: fixed;
+    z-index: 1;
     left:0;
     top:0;
 }
@@ -134,6 +138,9 @@ header nav ul>li {
     border-bottom: 2px solid green;
     border-top: 2px solid green;
 }
+header nav ul>li:last-child {
+    display: none;
+}
 
 /* Main style */
 main {
@@ -142,39 +149,67 @@ main {
     padding: 0.5em;
     margin: 0.5em;
     border-radius: 1em;
-    width: 76%;
+    width: 100%;
 }
 #lastWeek{
-    height: 500px;
+    width:100%;
+    height: 300px;
+    /* z-index: -1; */
+    
 }
 .slide{
     background-color: lightblue;
-    margin:50px;
     display: block;
     position: absolute;
-    width: 40%;
+    width: 60%;
     height: 240px;
 }
 .slide img{
     height: 240px;
     width: 100%;
+
     
 }
-.recipes{
-    display: none;
+#whole_week{
+    height: 600px;
+   overflow: hidden;
 }
+.today-menu{
+    height: 250px;
+}
+.today-menu:nth-child(odd) .nesthoVremennoZaSnimka{
+    float: left;
+}
+.today-menu:nth-child(even) .nesthoVremennoZaSnimka{
+    float: right;
+}
+
 #findRecipe{
     display: none;
 }
 
-/* Aside style */
-aside {
-    display: inline-block;
-    background-color: khaki;
-    padding: 0.5em;
-    margin: 0.5em;
+.food{
+    width: 25%;
     float: left;
-    border-radius: 1em;
+}
+#recipes{
+    display: none;
+}
+.food img{
+    width:150px;
+    height: 200px;
+}
+.tursacha-kategoriq{
+    display: none;
+}
+#razshireni-neshta{
+    /* display: none; */
+}
+#razshireni-neshta>div{
+    display: inline-block;
+}
+.tursacha-kategoriq{
+    /* display: none; */
 }
 
 /* Footer style */
