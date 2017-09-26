@@ -7,6 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/styles.css" />
     <title>BonAppetit</title>
+    <script src='assets/javascript/demo.js'></script>
+    <script src='assets/javascript/userService.js'></script>
+
 </head>
 
 <body>
@@ -15,43 +18,48 @@
             <!--Recipe search engine Option1  -->
             <!--Optional div for image,logo and so on.  -->
             <div id='logo'><img src='assets/images/logo.png' alt='logo' /></div>
-            <div  id='login-form'>
+            <div id='login-form'>
                 <div id='login-content'>
                     <img class='closeIcon' src="assets/images/close.png" alt="close icon">
                     <h2 class='form-Heading'>Вход</h2>
                     <form class='form-Content' action="#">
-                        <input type="text" name='Name' placeholder="Потребител:"></br>
-                        <input type="password" name='Password' placeholder="Парола:"></br>
-                        <input type="checkbox" value="Запомни ме"/><span>Запомни ме</span></br>
+                        <input id='personalUsername' type="text" name='Name' placeholder="Потребител:"></br>
+                        <input id='personalPassword' type="password" name='Password' placeholder="Парола:"></br>
+                        <p id='logIn-error'></p>
+                        <input type="checkbox" value="Запомни ме" /><span>Запомни ме</span></br>
                         <button id='enetr-accout'>Влез</button>
                     </form>
                 </div>
             </div>
             <button id='login'>Вход</button>
-            <div  id='reg-form'>
+            <div id='reg-form'>
                 <div id='reg-content'>
                     <img class='closeIcon' src="assets/images/close.png" alt="close icon">
                     <h2 class='form-Heading'>Регистрация</h2>
                     <form class='form-Content' action="#">
-                        <input  type="text" name='Name' placeholder="Username:"></br>
-                        <input  type="text" name='email' placeholder="Email:"></br>
-                        <input  type="password" name='Password' placeholder="Password:"></br>
-                        <input  type="password" name='RepeatPassword' placeholder="Repeat password:"><br>
-                        <input  type="submit" value="user" />
+                        <input id='yourname' type="text" name='Name' placeholder="Your Name:"></br>
+                        <input id='regUsername' type="text" name='Name' placeholder="Username:"></br>
+                        <input id='email' type="text" name='email' placeholder="Email:"></br>
+                        <input id='regPass' type="password" name='Password' placeholder="Password:"></br>
+                        <input id='repregPass' type="password" name='RepeatPassword' placeholder="Repeat password:"><br>
+                        <p id='registration-error'> </p>
+                                <button id='makeRegistration'>Register</button>
                     </form>
                 </div>
             </div>
-            <button  id='registration'>Регистрация</button>
-            <img id='facebook-logo' src="assets/images/facebook-icon.png" alt="Login with facebook" />
-            <script src='assets/javascript/demo.js'></script>
+            <!-- <div id='acc-settings'>
+                <!-- Neshto mai za po natam --
+                <p id='hello'></p>
+            </div> -->
+            <button id='registration'>Регистрация</button>
+            <img id='facebook-logo' href='#' src="assets/images/facebook-icon.png" alt="Login with facebook" />
             <!--Navigaton menu.-->
             <nav>
                 <ul>
-                    <li>Начало</li>
-                    <li><a onclick="openRecipes()" href="#findRecipe">Рецепти</a></li>
-                    <li>Тема на седмицата</li>
+                    <li id='openRecipe'>Рецепти</li>
+                    <li>Napravi Menu</li>
                     <!--Hidden unless the user is logged in  -->
-                    <li>Любими Рецепти</li>
+                    <li id='fav-recipes'>Любими Рецепти</li>
                     <!--Recipe search engine Option2  -->
                 </ul>
                 <!--Recipe search engine Option3  -->
@@ -59,29 +67,197 @@
         </header>
         <main>
             <!--Yet to be optimized(SPA)  -->
-            <!-- <section id="lastWeek">
+            <section id="lastWeek">
+                <h2>Menu za denq</h2>
                 <div class='slide'><img src="assets/images/pile-s-zelenchuci.jpeg" alt=""></div>
                 <div class='slide'><img src="assets/images/siomga-s-kopur.jpeg" alt=""></div>
                 <div class='slide'><img src="assets/images/pile-s-zelenchuci.jpeg" alt=""></div>
                 <div class='slide'><img src="assets/images/siomga-s-kopur.jpeg" alt=""></div>
-            </section> -->
-            <section id='findRecipe'>
-                <h2>По какъв начин желаете да търсите рецепта</h2>
-                <ul>
-                    <li><button onclick="openNameSearch()">Търси по име</button></li>
-                    <li onclick="openProductSearch()">Търси по продукти</li>
-                    <li onclick="openNeshtoDrugoSearch()">Търси по нещо друго</li>
-                </ul>
-                <article class='recipes' id='recipe-Name'>
-                    <h3>Някво заглавие</h3>
-                    <input id='tursachka' type="text" placeholder="Search"><button onclick="tursi()">Търси</button>
-                </article>
-                <article class='recipes' id='recipe-Product'>
-                    <h3>Някво заглавие</h3>
-                </article>
-                <article class='recipes' id="recipe-origin">
-                    <h3>Някво заглавие</h3>
-                </article>
+            </section>
+            <section id='home_Page'>
+                <h1 style="text-align:center">Меню за седмицата</h1>
+                <div id="whole_week">
+                    <h2>thisweek menu</h2>
+
+                    <article class="today-menu">
+                        <div class='nesthoVremennoZaSnimka'>
+                            <img style="width:200px; height:200px" src="assets/images/pile-s-zelenchuci.jpeg" alt="dneska">
+                        </div>
+                        <div class='neshtoVremennoZaTekst'>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae
+                                laboriosam fugiat. Harum, aliquam nulla facilis voluptatibus nam inventore molestiae natus
+                                sed eius rerum dolor voluptas deserunt.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="today-menu">
+                        <div class='nesthoVremennoZaSnimka'>
+                            <img style="width:200px; height:200px" src="assets/images/pile-s-zelenchuci.jpeg" alt="dneska">
+                        </div>
+                        <div class='neshtoVremennoZaTekst'>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae
+                                laboriosam fugiat. Harum, aliquam nulla facilis voluptatibus nam inventore molestiae natus
+                                sed eius rerum dolor voluptas deserunt.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="today-menu">
+                        <div class='nesthoVremennoZaSnimka'>
+                            <img style="width:200px; height:200px" src="assets/images/pile-s-zelenchuci.jpeg" alt="dneska">
+                        </div>
+                        <div class='neshtoVremennoZaTekst'>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae
+                                laboriosam fugiat. Harum, aliquam nulla facilis voluptatibus nam inventore molestiae natus
+                                sed eius rerum dolor voluptas deserunt.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="today-menu">
+                        <div class='nesthoVremennoZaSnimka'>
+                            <img style="width:200px; height:200px" src="assets/images/pile-s-zelenchuci.jpeg" alt="dneska">
+                        </div>
+                        <div class='neshtoVremennoZaTekst'>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae
+                                laboriosam fugiat. Harum, aliquam nulla facilis voluptatibus nam inventore molestiae natus
+                                sed eius rerum dolor voluptas deserunt.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="today-menu">
+                        <div class='nesthoVremennoZaSnimka'>
+                            <img style="width:200px; height:200px" src="assets/images/pile-s-zelenchuci.jpeg" alt="dneska">
+                        </div>
+                        <div class='neshtoVremennoZaTekst'>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae
+                                laboriosam fugiat. Harum, aliquam nulla facilis voluptatibus nam inventore molestiae natus
+                                sed eius rerum dolor voluptas deserunt.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="today-menu">
+                        <div class='nesthoVremennoZaSnimka'>
+                            <img style="width:200px; height:200px" src="assets/images/pile-s-zelenchuci.jpeg" alt="dneska">
+                        </div>
+                        <div class='neshtoVremennoZaTekst'>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae
+                                laboriosam fugiat. Harum, aliquam nulla facilis voluptatibus nam inventore molestiae natus
+                                sed eius rerum dolor voluptas deserunt.
+                            </p>
+                        </div>
+                    </article>
+                    <article class="today-menu">
+                        <div class='nesthoVremennoZaSnimka'>
+                            <img style="width:200px; height:200px" src="assets/images/pile-s-zelenchuci.jpeg" alt="dneska">
+                        </div>
+                        <div class='neshtoVremennoZaTekst'>
+                            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae
+                                laboriosam fugiat. Harum, aliquam nulla facilis voluptatibus nam inventore molestiae natus
+                                sed eius rerum dolor voluptas deserunt.
+                            </p>
+                        </div>
+                    </article>
+                </div>
+                <div>
+                    <img id='openTheDiv' style="width:30px; height:40px; margin-left:50%;" src="assets/images/openDiv.png" alt="">
+                </div>
+
+
+            </section>
+            <section id='recipes'>
+                <div id='category'>
+                    <article class='food'>
+                        <h1>Бързи</h1>
+                        <div>
+                            <img src="assets/images/pile-s-zelenchuci.jpeg" alt="burzi">
+                        </div>
+                        <div>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae laboriosam fugiat. Harum, aliquam
+                                nulla facilis voluptatibus nam inventore, molestiae natus sed eius rerum dolor voluptas deserunt.
+                            </p>
+                            <button class='view'>Pregled</button>
+                            <section class='tursacha-kategoriq'>
+                                <button id='dropdown'>Oshte</button>
+                                <input type="text" placeholder="search" id='searchEngine' />
+                                <button id='razshireno'>Razshireno Tursene</button>
+                                <div id='razshireni-neshta'>
+                                    <div class='pick-checkbox'>
+                                        <h4>Narodnost</h4>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                    </div>
+                                    <div class='pick-checkbox'>
+                                        <h4>nachin</h4>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                    </div>
+                                    <div class='pick-checkbox'>
+                                        <h4>Narodnost</h4>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                    </div>
+                                    <div class='pick-checkbox'>
+                                        <h4>nachin</h4>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                        <input type="checkbox">
+                                        <p>Kitaiski</p>
+                                    </div>
+                                </div>
+                            </section>
+                        </div>
+                    </article>
+                    <article class='food'>
+                        <h1>Бързи</h1>
+                        <div>
+                            <img src="assets/images/pile-s-zelenchuci.jpeg" alt="burzi">
+                        </div>
+                        <div>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae laboriosam fugiat. Harum, aliquam
+                                nulla facilis voluptatibus nam inventore, molestiae natus sed eius rerum dolor voluptas deserunt.
+                            </p>
+                            <button class='view'>Pregled</button>
+                        </div>
+                    </article>
+                    <article class='food'>
+                        <h1>Бързи</h1>
+                        <div>
+                            <img src="assets/images/pile-s-zelenchuci.jpeg" alt="burzi">
+                        </div>
+                        <div>
+                            <p>
+                                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui animi amet, excepturi molestiae laboriosam fugiat. Harum, aliquam
+                                nulla facilis voluptatibus nam inventore, molestiae natus sed eius rerum dolor voluptas deserunt.
+                            </p>
+                            <button class='view'>Pregled</button>
+
+                        </div>
+                    </article>
+
+                </div>
             </section>
             <!--<section>
                 <article></article>
@@ -91,30 +267,6 @@
             </section> -->
         </main>
         <!--Optional side menu/content for more info/adds and so on  -->
-        <aside>
-            <section>
-                <article>
-                    <h2>Продукт на деня</h2>
-                    <img src="assets/images/todays-product.jpg" alt="todays product">
-                    <p>dvzvsxdawawwwwwwwwww</p>
-                </article>
-                <article>
-                    <h2>Меню на деня</h2>
-                    <p></p>
-                </article>
-            </section>
-            <section>
-                <article>
-                    <h2>Любопитно</h2>
-                    <p></p>
-                </article>
-                <!--Optional  -->
-                <article>
-                    <h2>Евенти</h2>
-                    <h3>Календар</h3>
-                </article>
-            </section>
-        </aside>
 
         <footer>
             <article>
@@ -138,10 +290,8 @@
             </article>
             <article>
                 <h2>Адрес</h2>
-                <img src='assets/images/location-map.jpg' alt='map' id='location-map'/>
-                <p>Бул. България 69<br/>
-                    Манастирски ливади<br/>
-                    София, България</p>
+                <img src='assets/images/location-map.jpg' alt='map' id='location-map' />
+                <p>Бул. България 69<br/> Манастирски ливади<br/> София, България</p>
             </article>
             <article>
                 <img class='social-media' src="assets/images/fb-footer.png" alt="facebook"><br/>
