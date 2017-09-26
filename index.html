@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="assets/css/styles.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
     <title>BonAppetit</title>
     <script src='assets/javascript/demo.js'></script>
     <script src='assets/javascript/userService.js'></script>
@@ -43,7 +44,7 @@
                         <input id='regPass' type="password" name='Password' placeholder="Password:"></br>
                         <input id='repregPass' type="password" name='RepeatPassword' placeholder="Repeat password:"><br>
                         <p id='registration-error'> </p>
-                                <button id='makeRegistration'>Register</button>
+                        <button id='makeRegistration'>Register</button>
                     </form>
                 </div>
             </div>
@@ -270,15 +271,6 @@
 
         <footer>
             <article>
-                <h2>Още</h2>
-                <ul>
-                    <li><a href='http://ittalents.bg/home?gclid=CNfijoyxrdYCFYYaGwodDAcOYg'>За таланти</a></li>
-                    <li><a href='https://www.facebook.com/pages/Infinity-Tower/1428207337404142'>За сградата</a></li>
-                    <li>Help</li>
-                    <li>Blog</li>
-                </ul>
-            </article>
-            <article>
                 <h2>Свържи се с нас</h2>
                 <p><em>Владимир Вецев</em></p>
                 <p>тел: +359 888 154 335</p>
@@ -289,18 +281,40 @@
                 <p>gnikolova0709@gmail.com</p>
             </article>
             <article>
-                <h2>Адрес</h2>
-                <img src='assets/images/location-map.jpg' alt='map' id='location-map' />
-                <p>Бул. България 69<br/> Манастирски ливади<br/> София, България</p>
+                <form id="contact_form" action="#" method="POST">
+                    <div class="row">
+                        <label for="name">Твоете име:</label><br />
+                        <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+                    </div>
+                    <div class="row">
+                        <label for="email">Твоята поща:</label><br />
+                        <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+                    </div>
+                    <div class="row">
+                        <label for="message">Твоето съобщение:</label><br />
+                        <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+                    </div>
+                    <input type="hidden" name="action" value="submit" />
+                    <input id="submit_button" type="submit" value="Изпрати" />
+                </form>
             </article>
             <article>
-                <img class='social-media' src="assets/images/fb-footer.png" alt="facebook"><br/>
-                <img class='social-media' src="assets/images/tweet.png" alt="tweeter"><br/>
-                <img class='social-media' src="assets/images/lnk.png" alt="linkedin"><br/>
-                <img class='social-media' src="assets/images/g+.png" alt="google+"><br/>
-                <img class='social-media' src="assets/images/ytub.png" alt="youtube">
-                </ul>
+                <h2>Адрес</h2>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2074.5353495349073!2d23.28897893584367!3d42.66483006383608!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x40aa84ea538dfdef%3A0xd78af264a1dfcc28!2z0JjQvdGE0LjQuNC90LjRgtC4INCi0LDRg9GK0YAsIDE0MDQg0LrQsi4g0JzQsNC90LDRgdGC0LjRgNGB0LrQuCDQu9C40LLQsNC00LgsINCh0L7RhNC40Y8!3m2!1d42.6641409!2d23.2879827!5e0!3m2!1sbg!2sbg!4v1506462547989"
+                        width="300" height="auto" style="border:2px" allowfullscreen></iframe>
+                </div>
+                <p>Бул. България 69<br/> Манастирски ливади<br/> София, България</p>
             </article>
+            <div class="icon-contact">
+                <ul>
+                    <li><a><i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
+                    <li><a><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
+                    <li><a><i class="fa fa-instagram" aria-hidden="true"></i></a> </li>
+                    <li><a><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+                    <li><a><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
+                </ul>
+            </div>
         </footer>
     </div>
 </body>
