@@ -144,6 +144,7 @@ header nav ul>li:last-child {
 
 /* Main style */
 main {
+    box-sizing: border-box;
     display: inline-block;
     background-color: khaki;
     padding: 0.5em;
@@ -212,64 +213,64 @@ main {
     /* display: none; */
 }
 
-/* Footer style */
-footer {
-    box-sizing: border-box;
+/* footer styling */
+#footer {
     display: block;
     background-color: khaki;
     padding: 0.5em;
-    margin: 0.5em;
     border-radius: 1em;
-    display: inline-block;
-    width: 100%;
-}
-
-footer article {
-    display: inline-block;
-    float: left;
-    margin: 10px 30px;
-    text-align: center;
-}
-
-input[type=text], textarea {
-    width: 100%; 
-    padding: 12px; 
-    border: 1px solid #ccc;
-    border-radius: 5px;
     box-sizing: border-box;
-    margin-top: 5px; 
-    margin-bottom: 10px;
-    resize: vertical;
 }
 
-#submit_button {
-    width: 70px;
+/* newsletter */
+.newsletter-title {
+    text-align: center;
+    font-family: 'Podkova', serif;
+    font-size: 2.5em;
+}
+.newsletter-input{
+    border-radius: 1em;
+    width: 300px;
     height: 30px;
-    border-radius: 3px;
-    background-color: #08961D;
-    border: 1px solid  #008337;
+    font-family: 'Podkova', serif;
+    font-size: 1em;
+}
+.newsletter-input:hover {
+    background-color: lightgoldenrodyellow;
+}
+.newsletter-submit-button {
+    border-radius: 1em;
+    height: 30px;
+    margin-left: 1em;
+    font-family: 'Podkova', serif;
+    font-size: 1em;
+    background-color: gray;
     font-weight: bold;
-    color: whitesmoke;
 }
-
-#contact_form {
-    padding: 1em;
+#newsletter-input-and-submit{
+    display: block;
+    width: 40%;
+    margin: auto;
 }
-
+.custom-checkbox {
+    display: block;
+    width: 40%;
+    margin: auto;
+    margin-bottom: 2em;
+}
+/* social media icons */
 .icon-contact {
-    position: relative; 
+    position: relative;
  }
- 
  .icon-contact ul li{  
     list-style-type: none;   
-    display: table-row;
+    display: table-cell;
     padding: 8px;
  }
  .icon-contact ul {   
      display: table;
      table-layout: fixed;
  }
- 
  .icon-contact ul li a{
      position: relative;
      text-align: center;
@@ -288,7 +289,6 @@ input[type=text], textarea {
      overflow: hidden;
      z-index: 1;
  }
- 
  .icon-contact ul li a .fa{
      color: #262626;
      position: relative;
@@ -353,3 +353,16 @@ input[type=text], textarea {
  .icon-contact ul li:nth-child(5) a:before{
      background-color:#007bb5;
  } 
+ #icons-footer ul {
+     display: block;
+     width: 37%;
+     margin: auto;
+ }
+
+ .footer-logo-image, .copyright {
+     display: block;
+     margin: auto;
+     text-align: center;
+     font-family: 'Podkova', serif;
+     font-size: 1em; 
+ }
