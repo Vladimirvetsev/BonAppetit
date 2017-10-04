@@ -1,13 +1,7 @@
 body {
-    background-color: rgb(9,48,15);
-    padding: 1em;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
 }
 
-#wrapper {
-    width: 1165px;
-    margin: auto;
-}
 
 @media screen and (max-width: 1165px) {
     .wrapper {
@@ -16,22 +10,75 @@ body {
 }
 
 /* Header style */
-header {
+header{
     box-sizing: border-box;
-    display: block;
-    background-color: khaki;
-    padding: 0.5em;
-    height: 150px;
-    margin: 0.5em;
-    border-radius: 1em;
+    width:100%;
+    height:80px;
+    background-color: rgba(221, 218, 218,0.9);
+    position: fixed;
+    z-index: 1;
 }
-
-header div#logo {
-    width: 200px;
+header>div , nav{
     float: left;
-    margin: 30px;  
+   
+    
+    
 }
-
+header>nav>ul{
+    box-sizing: border-box;
+}
+header>nav>ul>li{
+    display: inline-block;
+    text-transform: uppercase;
+    color: rgba(23, 26, 27,0.6);
+    font-size:1.4em;
+    font-weight: 700;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 0.7em;
+    padding-bottom: 0.9em;
+    border-right: 0.1em solid white;
+    
+}
+header>nav>ul>li:last-child{
+    display: inline-block;
+    text-transform: uppercase;
+    color: rgba(23, 26, 27,0.6);
+    font-size:1.4em;
+    font-weight: 700;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 1.3em;
+    padding-bottom: 1.3em;
+    border-right: 0.1em hidden white;
+    display: none;
+    
+}
+#forms>ul>li{
+    display: inline-block;
+    text-transform: uppercase;
+    color: rgba(23, 26, 27,0.6);
+    font-size:1.4em;
+    font-weight: 700;
+}
+#forms{
+    float: right;
+    height: 100%;
+    top:37%;
+    position: relative;
+}
+header>nav{
+    left:5%;
+    position: relative;
+    top:10%;    
+    width: 50%;
+}
+#logo{
+    width:100px;
+    height: 100px;
+    padding-left: 2em;
+   
+}
 
 header>div#login-form {
     background-color: gray;
@@ -118,66 +165,76 @@ header>div#reg-form {
 
 }
 
-#facebook-logo {
-    width: 30px;
-}
 
-header nav ul li:hover {
-    background-color:rgb(9,48,15);
-    color: whitesmoke;
-    border-radius: 2em;
-}
-
-header nav ul>li {
-    display: inline-block;
-    width: 13%;
-    font-size: 1.5em;
-    text-align: center;
-    box-sizing: border-box;
-    margin-top: 30px;
-    border-bottom: 2px solid green;
-    border-top: 2px solid green;
-}
-header nav ul>li:last-child {
-    display: none;
-}
 
 /* Main style */
 main {
     box-sizing: border-box;
     display: inline-block;
-    background-color: khaki;
-    padding: 0.5em;
-    margin: 0.5em;
-    border-radius: 1em;
     width: 100%;
 }
 #lastWeek{
+    float: left;
     width:100%;
-    height: 300px;
-    /* z-index: -1; */
-    
+    height: 700px;
+    margin-top: 100px;
+}
+#lastWeek-img{
+    width:65%;
+    display: inline-block;
+    text-align: center;
+    height: 700px
+}
+#lastWeek-recipes{
+    display: inline-block;
+    height: 700px;
+    padding-left: 5%;
+    padding-top: 4em;   
+}
+.recipeslide>ul>li{
+    list-style-type: none;   
+}
+.recipeslide{
+    display: none;
+    position: absolute;
+}
+.recipeslide:first-child{
+    display: block;
+}
+
+#lastWeek-recipes>h2{
+    padding-top: 3em;
 }
 .slide{
-    background-color: lightblue;
     display: block;
     position: absolute;
-    width: 60%;
-    height: 240px;
+    width: 50%;
+    top:15%;
+    left:17%;
 }
 .slide img{
-    height: 240px;
+    height: 600px;
     width: 100%;
-
-    
 }
 #whole_week{
-    height: 600px;
-   overflow: hidden;
+   margin-left: 15%;
+   margin-right: 15%;
 }
-.today-menu{
-    height: 250px;
+.menu{
+    height: 300px;
+    width:200px;
+    display: inline-block;
+    padding-right: 9%;
+    padding-left: 3%;
 }
+.menu-img>img{
+    width:300px; 
+    height:300px;
+}
+.menu-description{
+    text-align: center;
+}
+
 .today-menu:nth-child(odd) .nesthoVremennoZaSnimka{
     float: left;
 }
@@ -201,25 +258,25 @@ main {
     height: 200px;
 }
 .tursacha-kategoriq{
-    display: none;
+    display:none;
 }
 #razshireni-neshta{
-    /* display: none; */
+/* display:none;*/
 }
 #razshireni-neshta>div{
-    display: inline-block;
+    display:inline-block;
 }
 .tursacha-kategoriq{
-    /* display: none; */
+    /*display:none;*/
 }
 
 /* footer styling */
 #footer {
     display: block;
-    background-color: khaki;
     padding: 0.5em;
     border-radius: 1em;
     box-sizing: border-box;
+    background-color: rgb(221, 218, 218);
 }
 
 /* newsletter */
