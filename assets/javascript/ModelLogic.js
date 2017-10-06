@@ -5,7 +5,7 @@ function User(name, userName, email, password, secondPassword) {
     this.password = password;
     this.secondPassword = secondPassword;
     this.okLie=true;
-    
+    this.favRecipe = [];
 }
 
 User.prototype.chekTheUser = function (list) {
