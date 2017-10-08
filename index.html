@@ -13,7 +13,16 @@
     <script src='assets/javascript/view.js'></script>
     <script src='assets/javascript/userService.js'></script>
     <script src='assets/javascript/favoriteRecipesService.js'></script>
+    <script src='assets/javascript/optionController.js'></script>
+    <script src='assets/javascript/mainController.js'></script>
 
+    <script src='node_modules/handlebars/dist/handlebars.min.js'></script>
+    <script src='assets/javascript/fbLogin.js'></script>
+<style>
+    div.contactUs {
+        display:none;
+    }
+</style>
 </head>
 
 <body>
@@ -58,6 +67,7 @@
                 <ul>
                     <li id='openRecipe'>Рецепти</li>
                     <li>Napravi Menu</li>
+                    <li id='aboutUs'><a href='#aboutUs'>За нас</a></li>
                     <!--Hidden unless the user is logged in  -->
                     <li id='fav-recipes'>Любими Рецепти</li>
                 </ul>
@@ -67,6 +77,9 @@
                 <ul>
                     <li id='login'>Вход</li>
                     <li id='registration'>Регистрация</li>
+                    <li><fb:login-button scope="public_profile,email" onlogin="checkLoginState();">
+                    </fb:login-button></li>
+                    <div id="status"></div>
                 </ul>
                 <!-- <button id='login'>Вход</button>
                 <button id='registration'>Регистрация</button> -->
@@ -74,8 +87,50 @@
             <!--Recipe search engine Option3  -->
 
         </header>
+        
+                
+        
         <main>
+           <div id='contactUs-content' class='contactUs'>
+                        <!-- Когато се кликне на За нас -->
+                        <article>
+                                <h2>Свържи се с нас</h2>
+                                <p><em>Владимир Вецев</em></p>
+                                <p>тел: +359 888 154 335</p>
+                                <p>vladimirvetsev@gmail.com</p>
+                                <hr/>
+                                <p><em>Гергана Николова</em></p>
+                                <p>тел: +359 883 555 596</p>
+                                <p>gnikolova0709@gmail.com</p>
+                            </article>
+                            <article>
+                                <form id="contact_form" action="#" method="POST">
+                                    <div class="row">
+                                        <label for="name">Твоете име:</label><br />
+                                        <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+                                    </div>
+                                    <div class="row">
+                                        <label for="email">Твоята поща:</label><br />
+                                        <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+                                    </div>
+                                    <div class="row">
+                                        <label for="message">Твоето съобщение:</label><br />
+                                        <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+                                    </div>
+                                    <input type="hidden" name="action" value="submit" />
+                                    <input id="submit_button" type="submit" value="Изпрати" />
+                                </form>
+                            </article>
+                            <article>
+                                <h2>Адрес</h2>
+                                <div>
+                                        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2467.087377090216!2d23.290172392104058!3d42.66394357661928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x40aa84ea538dfdef%3A0xd78af264a1dfcc28!2z0JjQvdGE0LjQuNC90LjRgtC4INCi0LDRg9GK0YAsIDE0MDQg0LrQsi4g0JzQsNC90LDRgdGC0LjRgNGB0LrQuCDQu9C40LLQsNC00LgsINCh0L7RhNC40Y8!3m2!1d42.6641409!2d23.2879827!5e0!3m2!1sbg!2sbg!4v1507501994182" width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                                </div>
+                                <p>Бул. България 69<br/> Манастирски ливади<br/> София, България</p>
+                            </article>
+                    </div>
             <!--Yet to be optimized(SPA)  -->
+            <div class='visibleParth'>
             <section id='lastWeek'>
 
                 <article id="lastWeek-img">
@@ -355,6 +410,7 @@
                 <article></article>
                 <article></article>
             </section>
+            </div>
         </main>
         <!--Optional side menu/content for more info/adds and so on  -->
 
