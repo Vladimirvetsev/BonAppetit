@@ -40,6 +40,15 @@ header>nav>ul>li{
     border-right: 0.1em solid white;
     
 }
+a:link {
+    text-decoration: none;
+}
+header>nav>ul>li>a:active{
+    color: rgba(23, 26, 27,0.6);
+}
+header>nav>ul>li>a:visited{
+    color: rgba(23, 26, 27,0.6);
+}
 header>nav>ul>li:last-child{
     display: inline-block;
     text-transform: uppercase;
@@ -166,8 +175,53 @@ header>div#reg-form {
 }
 
 
+/* Hidden */
+div.contactUs {
+    box-sizing: border-box;
+    display: block;
+    padding: 0.5em;
+    margin: 0.5em;
+    padding-top: 5em;
+    border-radius: 1em;
+    display: inline-block;
+    width: 100%;
+}
+
+div.contactUs article {
+    display: inline-block;
+    float: left;
+    margin: 10px 30px;
+    text-align: center;
+    margin: 3em;
+}
+
+input[type=text], textarea {
+    width: 100%; 
+    padding: 12px; 
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-top: 5px; 
+    margin-bottom: 10px;
+    resize: vertical;
+}
+
+#submit_button {
+    width: 70px;
+    height: 30px;
+    border-radius: 3px;
+    background-color: #08961D;
+    border: 1px solid  #008337;
+    font-weight: bold;
+    color: whitesmoke;
+}
+
+#contact_form {
+    padding: 1em;
+}
 
 /* Main style */
+
 main {
     box-sizing: border-box;
     display: inline-block;
@@ -273,6 +327,7 @@ main {
 /* footer styling */
 #footer {
     display: block;
+    margin: 1em;
     padding: 0.5em;
     border-radius: 1em;
     box-sizing: border-box;
@@ -281,6 +336,7 @@ main {
 
 /* newsletter */
 .newsletter-title {
+    display: block;
     text-align: center;
     font-family: 'Podkova', serif;
     font-size: 2.5em;
@@ -303,6 +359,7 @@ main {
     font-size: 1em;
     background-color: gray;
     font-weight: bold;
+    float: right;
 }
 #newsletter-input-and-submit{
     display: block;
@@ -410,12 +467,11 @@ main {
  .icon-contact ul li:nth-child(5) a:before{
      background-color:#007bb5;
  } 
- #icons-footer ul {
-     display: block;
-     width: 37%;
-     margin: auto;
- }
-
+div.icon-contact{
+    margin: auto;
+    display: block;
+    width: 28%;
+}
  .footer-logo-image, .copyright {
      display: block;
      margin: auto;
