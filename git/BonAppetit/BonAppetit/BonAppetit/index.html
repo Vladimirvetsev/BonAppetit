@@ -1,0 +1,1587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="assets/css/defaultcss.css" />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+    <link rel="stylesheet" href="assets/css/shop_style.css" />
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Podkova" rel="stylesheet">
+    <title>BonAppetit</title>
+    <script src='assets/javascript/recipes.js'></script>
+    <script src='assets/javascript/userService.js'></script>
+    <script src='assets/javascript/view.js'></script>
+    <script src='assets/javascript/homePage.js'></script>
+    <script src='assets/javascript/recipeStore.js'></script>
+    <script src='assets/javascript/mainController.js'></script>
+    <script src='assets/javascript/modelShop.js'></script>
+    <script src='assets/javascript/bonappetitController.js'></script>
+
+</head>
+
+<body>
+    <div id='wrapper'>
+        <header>
+            <div id='login-form'>
+                <div id='login-content'>
+                    <img class='closeIcon' src="assets/images/close.png" alt="close icon">
+                    <h2 class='form-Heading'>Вход</h2>
+                    <form class='form-Content' action="#">
+                        <input id='personalUsername' type="text" name='Name' placeholder="Потребител:"></br>
+                        <input id='personalPassword' type="password" name='Password' placeholder="Парола:"></br>
+                        <p id='logIn-error'></p>
+                        <input type="checkbox" value="Запомни ме" /><span>Запомни ме</span></br>
+                        <button id='enetr-accout'>Влез</button>
+                    </form>
+                    <p class="showReg" >Нямате регистрация?Регистрирай се тук.</p>
+                    </div>
+                </div>
+                <div id='reg-form'>
+                    <div id='reg-content'>
+                        <img class='closeIcon' src="assets/images/close.png" alt="close icon">
+                        <h2 class='form-Heading'>Регистрация</h2>
+                    <form class='form-Content' action="#">
+                        <input id='yourname' type="text" name='Name' placeholder="Your Name:"></br>
+                        <input id='regUsername' type="text" name='Name' placeholder="Username:"></br>
+                        <input id='email' type="text" name='email' placeholder="Email:"></br>
+                        <input id='regPass' type="password" name='Password' placeholder="Password:"></br>
+                        <input id='repregPass' type="password" name='RepeatPassword' placeholder="Repeat password:"><br>
+                        <p id='registration-error'> </p>
+                        <button id='makeRegistration'>Register</button>
+                    </form>
+                    <p class="showReg">Имате регистрация?Вход.</p>
+                </div>
+            </div>
+            <!-- <div id='acc-settings'>
+                <!-- Neshto mai za po natam --
+                <p id='hello'></p>
+            </div> -->
+            <div id='logoDiv'>
+                <img id='logo' src='assets/images/bon_appetit_logo1.png' alt='logo' />
+            </div>
+            <nav>
+
+                <span class="openHome">Начало</span>
+                <span class='openRecipes'>Рецепти</span>
+                <span class='toTheShop'>Бон Апети Магазин</span>
+                <span class='aboutUs'>Контакти</span>
+                <span id='login'>Вход/Регистрация</span>
+                <span class="icon">&#9776</span>
+                <span class='logedUser'></span>
+            </nav>
+
+        </header>
+        <main>
+            <!--Yet to be optimized(SPA)  -->
+            <section id='lastWeek'>
+
+                <article id="lastWeek-img">
+                    <div class='slide'><img src="assets/images/slide1.jpeg" alt=""></div>
+                    <div class='slide'><img src="assets/images/slide2.jpeg" alt=""></div>
+                    <div class='slide'><img src="assets/images/slide3.jpeg" alt=""></div>
+                    <div class='slide'><img src="assets/images/desert-category.jpeg" alt=""></div>
+                </article>
+                <article id="lastWeek-recipes">
+                    <div class="recipeslide">
+                        <h2>Киноа със зеленчуци</h2>
+                        <span>подходяща за вегетарианци</span>
+                        <hr><br>
+                        <h3>Продукти</h3>
+                        <ul>
+                            <li>200 гр. киноа</li>
+                            <li>100 гр. печурки</li>
+                            <li>1 тиквичка</li>
+                            <li>зехтин</li>
+                            <li>сол на вкус</li>
+                            <li>2-3 стръкчета прясна мента</li>
+                        </ul><br>
+                        <h3>Начин на приготвяне</h3>
+
+                        <ol>
+                            <li>Киноата се сварява бързо, за около 15 минути</li>
+                            <li>Гъбите, тиквичките и чушките се нарязват на малки кубчета. </li>
+                            <li>Загрейте мазнина в дълбок тиган и ги задушете с малко водичка.</li>
+                            <li>Поднесете в купички и украсете със свежи листа мента.</li>
+                        </ol><br>
+                        <span>Време:30мин</span><br>
+                        <span>Трудност:Средна</span><br>
+                        <span>Обща цена 9лв</span><br>
+                    </div>
+                    <div class="recipeslide">
+                        <h2>Френски солен кекс</h2>
+                        <span>подходящ за закуска</span>
+                        <hr><br>
+                        <h3>Продукти</h3>
+                        <ul>
+                            <li>200 гр. брашно</li>
+                            <li>110 мл. прясно мляко</li>
+                            <li>80 гр. твърдо сирене </li>
+                            <li>3 яйца</li>
+                        </ul><br>
+                        <h3>Начин на приготвяне</h3>
+
+                        <ol>
+                            <li>Смесете продуктите</li>
+                            <li>Бъркайте добре, докато не стане пухкаво тесто</li>
+                            <li>Намазнете тавичка</li>
+                            <li>Печете на 180 градуса 35мин</li>
+                        </ol><br>
+                        <span>Време:45мин</span><br>
+                        <span>Трудност:Средна</span><br>
+                        <span>Обща цена 7.5лв</span><br>
+                    </div>
+                    <div class="recipeslide">
+                        <h2>Торта с портокали</h2>
+                        <span>да ви е сладко</span>
+                        <hr><br>
+                        <h3>Продукти</h3>
+                        <ul>
+                            <li>3 блата за торта</li>
+                            <li>6 портокала</li>
+                            <li>100 гр. захар</li>
+                            <li>250 гр. сметана</li>
+                        </ul><br>
+                        <h3>Начин на приготвяне</h3>
+
+                        <ol>
+                            <li>Изчистете портокалите и ги нарежете на кръгчета</li>
+                            <li>Намажете блатовете със сметана</li>
+                            <li>Поръсете със захар и портокали</li>
+                            <li>Печете на 190 градуса 25мин</li>
+                        </ol><br>
+                        <span>Време:35мин</span><br>
+                        <span>Трудност:Средна</span><br>
+                        <span>Обща цена 11лв</span><br>
+                    </div>
+                    <div class="recipeslide">
+                        <h2>Миди по бургаски</h2>
+                        <span>само за лица</span>
+                        <hr><br>
+                        <h3>Продукти</h3>
+                        <ul>
+                            <li>1,5 пресни черни миди с черупките</li>
+                            <li>350 гр. ориз</li>
+                            <li>1 ч.ч. бяло вино</li>
+                            <li>2 белени домата</li>
+                            <li>джоджен</li>
+                        </ul><br>
+                        <h3>Начин на приготвяне</h3>
+
+                        <ol>
+                            <li>Сварете ориза </li>
+                            <li>Загрейте олиото в дълбок тиган и задушете мидите</li>
+                            <li>Изпий виното и сложи джоджен да има</li>
+                            <li>Налей си пак вино</li>
+                        </ol><br>
+                        <span>Време:17мин</span><br>
+                        <span>Трудност:Средна</span><br>
+                        <span>Обща цена 17лв</span><br>
+                    </div>
+                </article>
+            </section>
+
+
+            <section id='home_Page'>
+
+                <div id="whole_week">
+                    <article id='first' class="menu">
+                        <div class='menu-img'>
+                            <div class='view'>
+                                <p>View</p>
+                            </div>
+                            <img class="daily" src="assets/images/slide1.jpeg" alt="dneska">
+                        </div>
+                        <div class='menu-description'>
+                            <h3>Pile</h3>
+                            <span>Pile sus zelenchuci s mlqko</span>
+
+                        </div>
+                    </article>
+
+                    <article id='second' class="menu">
+                        <div class='menu-img'>
+                            <div class='view'>
+                                <p>View</p>
+                            </div>
+                            <img class="daily" src="assets/images/slide1.jpeg" alt="dneska">
+                        </div>
+                        <div class='menu-description'>
+                            <h3>Pile</h3>
+                            <span>Pile sus zelenchuci s mlqko</span>
+
+                        </div>
+                    </article>
+                    <article id='third' class="menu">
+                        <div class='menu-img'>
+                            <div class='view'>
+                                <p>View</p>
+                            </div>
+                            <img class="daily" src="assets/images/slide1.jpeg" alt="dneska">
+                        </div>
+                        <div class='menu-description'>
+                            <h3>Pile</h3>
+                            <span>Pile sus zelenchuci s mlqko</span>
+
+                        </div>
+                    </article>
+                    <article class='thisRecipe'>
+                        <img class="recipeImg" src="assets/images/slide1.jpeg" alt="dneska">
+                        <h2>Pile</h2>
+                        <span>Dopulnitelna informaciq</span>
+                        <hr>
+                        <h3>Kratko opisanie</h3><br>
+                        <p>aifjwpijfpawjf</p><br>
+                        <br>
+                        <hr>
+                        <ul>
+                            <li>Vremetraene</li>
+                            <li>Trudnost</li>
+                            <li>porcii</li>
+                        </ul><br>
+                        <h3>Tip recepta</h3><br>
+                        <span>Veg/mesna/desert</span><br>
+                        <div class="likes">
+                            <img src="assets/images/Favorite - Add.png" alt="awdawd">
+                            <img src="assets/images/Like.png" alt="awdawd">
+                        </div>
+
+
+                        <div class="howTo">
+                            <hr>
+
+                            <div class='howToIng'>
+                                <h3>Produkti</h3>
+                                <ul class="ingred-list ">
+                                    <li>2 red onions </li>
+                                    <li>2 cloves of garlic </li>
+                                    <li>1 fresh red chilli </li>
+                                    <li>2 large carrots </li>
+                                    <li>olive oil </li>
+                                    <li>1 heaped teaspoon sweet smoked paprika </li>
+                                    <li>1 level teaspoon cumin seeds </li>
+                                    <li>1 level teaspoon dried chilli flakes </li>
+                                    <li>6 medium sweet potatoes </li>
+                                    <li> 1 x 700 ml jar of passata </li>
+                                    <li>2 x 400 g tins of mixed beans </li>
+                                    <li>100 ml quality BBQ sauce </li>
+                                    <li>a few sprigs of fresh rosemary </li>
+                                    <li>½ a loaf of ciabatta or stale bread </li>
+                                    <li>40 g Cheddar cheese , optional </li>
+                                    <li>fat-free natural yoghurt , to serve </li>
+                                </ul>
+                            </div>
+                            <div class='howToMethod'>
+                                <h3>Nachin Na prigotvqne</h3>
+                                <ol>
+                                    <li>Preheat the oven to 180°C/350°F/gas 4.</li>
+                                    <li>Peel the onions and garlic, then finely slice with the chilli. Peel and chop the carrots.
+                                        Put all these into a large roasting tray and place on a medium heat with a lug of
+                                        oil, the paprika, cumin and chilli flakes. Cook for 20 minutes, or until softened,
+                                        stirring regularly.</li>
+                                    <li>Meanwhile, scrub the sweet potatoes clean, then rub them with a little oil, sea salt
+                                        and black pepper, place on a baking tray and put aside.</li>
+                                    <li>When the time’s up, stir the passata into the tray, add a splash of water to the empty
+                                        jar, swirl it around and pour it in along with the beans (juice and all). Drizzle
+                                        over the BBQ sauce, season lightly and stir well.</li>
+                                    <li>Pick and roughly chop the rosemary leaves, toss in a little oil and sprinkle over the
+                                        top, then place in the oven for around 1 hour, or until bubbling, baked and gorgeous,
+                                        adding a splash or two of water to loosen, if needed.</li>
+                                    <li>Put the tray of sweet potatoes into the oven for the same amount of time, or until soft
+                                        and cooked through.</li>
+                                    <li>Around 20 minutes before the beans are ready, tear the bread into rough chunks and toss
+                                        with a drizzle of oil in a roasting tray.</li>
+                                    <li>Grate over the Cheddar (if using), then place on the bottom shelf of the oven for around
+                                        15 minutes, or until crispy and golden, to make croutons.</li>
+                                    <li>Remove everything from the oven, tear up or squidge open the potatoes, and serve with
+                                        the beans, dollops of yoghurt and the homemade croutons to mop up that delicious
+                                        sauce, with a simple green salad on the side.</li>
+                                </ol>
+                            </div>
+                            <hr>
+                        </div>
+                        <!-- <div class='commentSection'>
+                                <h2>Coments</h2>
+                                <span>Cout Of coments</span><br>
+                                <img id='user-coments-img' src="#" alt="userImg">
+                                <textarea class='comentArea' name="comment" form="usrform" placeholder="Enter your comment"></textarea><br>
+                                <button class='addComment'>Coment</button>
+                            </div> -->
+                    </article>
+                    <article class='thisRecipe'>
+                        <img class="recipeImg" src="assets/images/slide1.jpeg" alt="dneska">
+                        <h2>Pile</h2>
+                        <span>Dopulnitelna informaciq</span>
+                        <hr>
+                        <h3>Kratko opisanie</h3><br>
+                        <p>aifjwpijfpawjf</p><br>
+                        <br>
+                        <hr>
+                        <ul>
+                            <li>Vremetraene</li>
+                            <li>Trudnost</li>
+                            <li>porcii</li>
+                        </ul><br>
+                        <h3>Tip recepta</h3><br>
+                        <span>Veg/mesna/desert</span><br>
+                        <div class="likes">
+                            <img src="assets/images/Favorite - Add.png" alt="awdawd">
+                            <img src="assets/images/Like.png" alt="awdawd">
+                        </div>
+
+
+                        <div class="howTo">
+                            <hr>
+
+                            <div class='howToIng'>
+                                <h3>Produkti</h3>
+                                <ul class="ingred-list ">
+                                    <li>2 red onions </li>
+                                    <li>2 cloves of garlic </li>
+                                    <li>1 fresh red chilli </li>
+                                    <li>2 large carrots </li>
+                                    <li>olive oil </li>
+                                    <li>1 heaped teaspoon sweet smoked paprika </li>
+                                    <li>1 level teaspoon cumin seeds </li>
+                                    <li>1 level teaspoon dried chilli flakes </li>
+                                    <li>6 medium sweet potatoes </li>
+                                    <li> 1 x 700 ml jar of passata </li>
+                                    <li>2 x 400 g tins of mixed beans </li>
+                                    <li>100 ml quality BBQ sauce </li>
+                                    <li>a few sprigs of fresh rosemary </li>
+                                    <li>½ a loaf of ciabatta or stale bread </li>
+                                    <li>40 g Cheddar cheese , optional </li>
+                                    <li>fat-free natural yoghurt , to serve </li>
+                                </ul>
+                            </div>
+                            <div class='howToMethod'>
+                                <h3>Nachin Na prigotvqne</h3>
+                                <ol>
+                                    <li>Preheat the oven to 180°C/350°F/gas 4.</li>
+                                    <li>Peel the onions and garlic, then finely slice with the chilli. Peel and chop the carrots.
+                                        Put all these into a large roasting tray and place on a medium heat with a lug of
+                                        oil, the paprika, cumin and chilli flakes. Cook for 20 minutes, or until softened,
+                                        stirring regularly.</li>
+                                    <li>Meanwhile, scrub the sweet potatoes clean, then rub them with a little oil, sea salt
+                                        and black pepper, place on a baking tray and put aside.</li>
+                                    <li>When the time’s up, stir the passata into the tray, add a splash of water to the empty
+                                        jar, swirl it around and pour it in along with the beans (juice and all). Drizzle
+                                        over the BBQ sauce, season lightly and stir well.</li>
+                                    <li>Pick and roughly chop the rosemary leaves, toss in a little oil and sprinkle over the
+                                        top, then place in the oven for around 1 hour, or until bubbling, baked and gorgeous,
+                                        adding a splash or two of water to loosen, if needed.</li>
+                                    <li>Put the tray of sweet potatoes into the oven for the same amount of time, or until soft
+                                        and cooked through.</li>
+                                    <li>Around 20 minutes before the beans are ready, tear the bread into rough chunks and toss
+                                        with a drizzle of oil in a roasting tray.</li>
+                                    <li>Grate over the Cheddar (if using), then place on the bottom shelf of the oven for around
+                                        15 minutes, or until crispy and golden, to make croutons.</li>
+                                    <li>Remove everything from the oven, tear up or squidge open the potatoes, and serve with
+                                        the beans, dollops of yoghurt and the homemade croutons to mop up that delicious
+                                        sauce, with a simple green salad on the side.</li>
+                                </ol>
+                            </div>
+                            <hr>
+                        </div>
+                        <!-- <div class='commentSection'>
+                                    <h2>Coments</h2>
+                                    <span>Cout Of coments</span><br>
+                                    <img id='user-coments-img' src="#" alt="userImg">
+                                    <textarea class='comentArea' name="comment" form="usrform" placeholder="Enter your comment"></textarea><br>
+                                    <button class='addComment'>Coment</button>
+                                </div> -->
+                    </article>
+                    <article class='thisRecipe'>
+                        <img class="recipeImg" src="assets/images/slide1.jpeg" alt="dneska">
+                        <h2>Pile</h2>
+                        <span>Dopulnitelna informaciq</span>
+                        <hr>
+                        <h3>Kratko opisanie</h3><br>
+                        <p>aifjwpijfpawjf</p><br>
+                        <br>
+                        <hr>
+                        <ul>
+                            <li>Vremetraene</li>
+                            <li>Trudnost</li>
+                            <li>porcii</li>
+                        </ul><br>
+                        <h3>Tip recepta</h3><br>
+                        <span>Veg/mesna/desert</span><br>
+                        <div class="likes">
+                            <img src="assets/images/Favorite - Add.png" alt="awdawd">
+                            <img src="assets/images/Like.png" alt="awdawd">
+                        </div>
+
+
+                        <div class="howTo">
+                            <hr>
+
+                            <div class='howToIng'>
+                                <h3>Produkti</h3>
+                                <ul class="ingred-list ">
+                                    <li>2 red onions </li>
+                                    <li>2 cloves of garlic </li>
+                                    <li>1 fresh red chilli </li>
+                                    <li>2 large carrots </li>
+                                    <li>olive oil </li>
+                                    <li>1 heaped teaspoon sweet smoked paprika </li>
+                                    <li>1 level teaspoon cumin seeds </li>
+                                    <li>1 level teaspoon dried chilli flakes </li>
+                                    <li>6 medium sweet potatoes </li>
+                                    <li> 1 x 700 ml jar of passata </li>
+                                    <li>2 x 400 g tins of mixed beans </li>
+                                    <li>100 ml quality BBQ sauce </li>
+                                    <li>a few sprigs of fresh rosemary </li>
+                                    <li>½ a loaf of ciabatta or stale bread </li>
+                                    <li>40 g Cheddar cheese , optional </li>
+                                    <li>fat-free natural yoghurt , to serve </li>
+                                </ul>
+                            </div>
+                            <div class='howToMethod'>
+                                <h3>Nachin Na prigotvqne</h3>
+                                <ol>
+                                    <li>Preheat the oven to 180°C/350°F/gas 4.</li>
+                                    <li>Peel the onions and garlic, then finely slice with the chilli. Peel and chop the carrots.
+                                        Put all these into a large roasting tray and place on a medium heat with a lug of
+                                        oil, the paprika, cumin and chilli flakes. Cook for 20 minutes, or until softened,
+                                        stirring regularly.</li>
+                                    <li>Meanwhile, scrub the sweet potatoes clean, then rub them with a little oil, sea salt
+                                        and black pepper, place on a baking tray and put aside.</li>
+                                    <li>When the time’s up, stir the passata into the tray, add a splash of water to the empty
+                                        jar, swirl it around and pour it in along with the beans (juice and all). Drizzle
+                                        over the BBQ sauce, season lightly and stir well.</li>
+                                    <li>Pick and roughly chop the rosemary leaves, toss in a little oil and sprinkle over the
+                                        top, then place in the oven for around 1 hour, or until bubbling, baked and gorgeous,
+                                        adding a splash or two of water to loosen, if needed.</li>
+                                    <li>Put the tray of sweet potatoes into the oven for the same amount of time, or until soft
+                                        and cooked through.</li>
+                                    <li>Around 20 minutes before the beans are ready, tear the bread into rough chunks and toss
+                                        with a drizzle of oil in a roasting tray.</li>
+                                    <li>Grate over the Cheddar (if using), then place on the bottom shelf of the oven for around
+                                        15 minutes, or until crispy and golden, to make croutons.</li>
+                                    <li>Remove everything from the oven, tear up or squidge open the potatoes, and serve with
+                                        the beans, dollops of yoghurt and the homemade croutons to mop up that delicious
+                                        sauce, with a simple green salad on the side.</li>
+                                </ol>
+                            </div>
+                            <hr>
+                        </div>
+                        <!-- <div class='commentSection'>
+                                        <h2>Coments</h2>
+                                        <span>Cout Of coments</span><br>
+                                        <img id='user-coments-img' src="#" alt="userImg">
+                                        <textarea class='comentArea' name="comment" form="usrform" placeholder="Enter your comment"></textarea><br>
+                                        <button class='addComment'>Coment</button>
+                                    </div> -->
+                    </article>
+                    <article class='thisRecipe'>
+                        <img class="recipeImg" src="assets/images/slide1.jpeg" alt="dneska">
+                        <h2>Pile</h2>
+                        <span>Dopulnitelna informaciq</span>
+                        <hr>
+                        <h3>Kratko opisanie</h3><br>
+                        <p>aifjwpijfpawjf</p><br>
+                        <br>
+                        <hr>
+                        <ul>
+                            <li>Vremetraene</li>
+                            <li>Trudnost</li>
+                            <li>porcii</li>
+                        </ul><br>
+                        <h3>Tip recepta</h3><br>
+                        <span>Veg/mesna/desert</span><br>
+                        <div class="likes">
+                            <img src="assets/images/Favorite - Add.png" alt="awdawd">
+                            <img src="assets/images/Like.png" alt="awdawd">
+                        </div>
+
+
+                        <div class="howTo">
+                            <hr>
+
+                            <div class='howToIng'>
+                                <h3>Produkti</h3>
+                                <ul class="ingred-list ">
+                                    <li>2 red onions </li>
+                                    <li>2 cloves of garlic </li>
+                                    <li>1 fresh red chilli </li>
+                                    <li>2 large carrots </li>
+                                    <li>olive oil </li>
+                                    <li>1 heaped teaspoon sweet smoked paprika </li>
+                                    <li>1 level teaspoon cumin seeds </li>
+                                    <li>1 level teaspoon dried chilli flakes </li>
+                                    <li>6 medium sweet potatoes </li>
+                                    <li> 1 x 700 ml jar of passata </li>
+                                    <li>2 x 400 g tins of mixed beans </li>
+                                    <li>100 ml quality BBQ sauce </li>
+                                    <li>a few sprigs of fresh rosemary </li>
+                                    <li>½ a loaf of ciabatta or stale bread </li>
+                                    <li>40 g Cheddar cheese , optional </li>
+                                    <li>fat-free natural yoghurt , to serve </li>
+                                </ul>
+                            </div>
+                            <div class='howToMethod'>
+                                <h3>Nachin Na prigotvqne</h3>
+                                <ol>
+                                    <li>Preheat the oven to 180°C/350°F/gas 4.</li>
+                                    <li>Peel the onions and garlic, then finely slice with the chilli. Peel and chop the carrots.
+                                        Put all these into a large roasting tray and place on a medium heat with a lug of
+                                        oil, the paprika, cumin and chilli flakes. Cook for 20 minutes, or until softened,
+                                        stirring regularly.</li>
+                                    <li>Meanwhile, scrub the sweet potatoes clean, then rub them with a little oil, sea salt
+                                        and black pepper, place on a baking tray and put aside.</li>
+                                    <li>When the time’s up, stir the passata into the tray, add a splash of water to the empty
+                                        jar, swirl it around and pour it in along with the beans (juice and all). Drizzle
+                                        over the BBQ sauce, season lightly and stir well.</li>
+                                    <li>Pick and roughly chop the rosemary leaves, toss in a little oil and sprinkle over the
+                                        top, then place in the oven for around 1 hour, or until bubbling, baked and gorgeous,
+                                        adding a splash or two of water to loosen, if needed.</li>
+                                    <li>Put the tray of sweet potatoes into the oven for the same amount of time, or until soft
+                                        and cooked through.</li>
+                                    <li>Around 20 minutes before the beans are ready, tear the bread into rough chunks and toss
+                                        with a drizzle of oil in a roasting tray.</li>
+                                    <li>Grate over the Cheddar (if using), then place on the bottom shelf of the oven for around
+                                        15 minutes, or until crispy and golden, to make croutons.</li>
+                                    <li>Remove everything from the oven, tear up or squidge open the potatoes, and serve with
+                                        the beans, dollops of yoghurt and the homemade croutons to mop up that delicious
+                                        sauce, with a simple green salad on the side.</li>
+                                </ol>
+                            </div>
+                            <hr>
+                        </div>
+                        <!-- <div class='commentSection'>
+                            <h2>Coments</h2>
+                            <span>Cout Of coments</span><br>
+                            <img id='user-coments-img' src="#" alt="userImg">
+                            <textarea class='comentArea' name="comment" form="usrform" placeholder="Enter your comment"></textarea><br>
+                            <button class='addComment'>Coment</button>
+                        </div> -->
+                    </article>
+                    <article id='fourth' class="menu">
+                        <div class='menu-img'>
+                            <div class='view'>
+                                <p>View</p>
+                            </div>
+                            <img class="daily" src="assets/images/slide1.jpeg" alt="dneska">
+                        </div>
+                        <div class='menu-description'>
+                            <h3>Pile</h3>
+                            <span>Pile sus zelenchuci s mlqko</span>
+
+                        </div>
+                    </article>
+                    <article id='fifth' class="menu">
+                        <div class='menu-img'>
+                            <div class='view'>
+                                <p>View</p>
+                            </div>
+                            <img class="daily" src="assets/images/slide2.jpeg" alt="dneska">
+                        </div>
+                        <div class='menu-description'>
+                            <h3>Pile</h3>
+                            <span>Pile sus zelenchuci s mlqko</span>
+
+                        </div>
+                    </article>
+                    <article id='sixth' class="menu">
+                        <div class='menu-img'>
+                            <div class='view'>
+                                <p>View</p>
+                            </div>
+                            <img class="daily" src="assets/images/slide3.jpeg" alt="dneska">
+                        </div>
+                        <div class='menu-description'>
+                            <h3>Pile</h3>
+                            <span>Pile sus zelenchuci s mlqko</span>
+
+                        </div>
+                    </article>
+
+                    <article class='thisRecipe'>
+                        <img class="recipeImg" src="assets/images/slide1.jpeg" alt="dneska">
+                        <h2>Pile</h2>
+                        <span>Dopulnitelna informaciq</span>
+                        <hr>
+                        <h3>Kratko opisanie</h3><br>
+                        <p>aifjwpijfpawjf</p><br>
+                        <br>
+                        <hr>
+                        <ul>
+                            <li>Vremetraene</li>
+                            <li>Trudnost</li>
+                            <li>porcii</li>
+                        </ul><br>
+                        <h3>Tip recepta</h3><br>
+                        <span>Veg/mesna/desert</span><br>
+                        <div class="likes">
+                            <img src="assets/images/Favorite - Add.png" alt="awdawd">
+                            <img src="assets/images/Like.png" alt="awdawd">
+                        </div>
+
+
+                        <div class="howTo">
+                            <hr>
+
+                            <div class='howToIng'>
+                                <h3>Produkti</h3>
+                                <ul class="ingred-list ">
+                                    <li>2 red onions </li>
+                                    <li>2 cloves of garlic </li>
+                                    <li>1 fresh red chilli </li>
+                                    <li>2 large carrots </li>
+                                    <li>olive oil </li>
+                                    <li>1 heaped teaspoon sweet smoked paprika </li>
+                                    <li>1 level teaspoon cumin seeds </li>
+                                    <li>1 level teaspoon dried chilli flakes </li>
+                                    <li>6 medium sweet potatoes </li>
+                                    <li> 1 x 700 ml jar of passata </li>
+                                    <li>2 x 400 g tins of mixed beans </li>
+                                    <li>100 ml quality BBQ sauce </li>
+                                    <li>a few sprigs of fresh rosemary </li>
+                                    <li>½ a loaf of ciabatta or stale bread </li>
+                                    <li>40 g Cheddar cheese , optional </li>
+                                    <li>fat-free natural yoghurt , to serve </li>
+                                </ul>
+                            </div>
+                            <div class='howToMethod'>
+                                <h3>Nachin Na prigotvqne</h3>
+                                <ol>
+                                    <li>Preheat the oven to 180°C/350°F/gas 4.</li>
+                                    <li>Peel the onions and garlic, then finely slice with the chilli. Peel and chop the carrots.
+                                        Put all these into a large roasting tray and place on a medium heat with a lug of
+                                        oil, the paprika, cumin and chilli flakes. Cook for 20 minutes, or until softened,
+                                        stirring regularly.</li>
+                                    <li>Meanwhile, scrub the sweet potatoes clean, then rub them with a little oil, sea salt
+                                        and black pepper, place on a baking tray and put aside.</li>
+                                    <li>When the time’s up, stir the passata into the tray, add a splash of water to the empty
+                                        jar, swirl it around and pour it in along with the beans (juice and all). Drizzle
+                                        over the BBQ sauce, season lightly and stir well.</li>
+                                    <li>Pick and roughly chop the rosemary leaves, toss in a little oil and sprinkle over the
+                                        top, then place in the oven for around 1 hour, or until bubbling, baked and gorgeous,
+                                        adding a splash or two of water to loosen, if needed.</li>
+                                    <li>Put the tray of sweet potatoes into the oven for the same amount of time, or until soft
+                                        and cooked through.</li>
+                                    <li>Around 20 minutes before the beans are ready, tear the bread into rough chunks and toss
+                                        with a drizzle of oil in a roasting tray.</li>
+                                    <li>Grate over the Cheddar (if using), then place on the bottom shelf of the oven for around
+                                        15 minutes, or until crispy and golden, to make croutons.</li>
+                                    <li>Remove everything from the oven, tear up or squidge open the potatoes, and serve with
+                                        the beans, dollops of yoghurt and the homemade croutons to mop up that delicious
+                                        sauce, with a simple green salad on the side.</li>
+                                </ol>
+                            </div>
+                            <hr>
+                        
+
+                    </article>
+                    <article class='thisRecipe'>
+                        <img class="recipeImg" src="assets/images/slide2.jpeg" alt="dneska">
+                        <h2>Pile</h2>
+                        <span>Dopulnitelna informaciq</span>
+                        <hr>
+                        <h3>Kratko opisanie</h3><br>
+                        <p>aifjwpijfpawjf</p><br>
+                        <br>
+                        <hr>
+                        <ul>
+                            <li>Vremetraene</li>
+                            <li>Trudnost</li>
+                            <li>porcii</li>
+                        </ul><br>
+                        <h3>Tip recepta</h3><br>
+                        <span>Veg/mesna/desert</span><br>
+                        <div class="likes">
+                            <img src="assets/images/Favorite - Add.png" alt="awdawd">
+                            <img src="assets/images/Like.png" alt="awdawd">
+                        </div>
+
+
+                        <div class="howTo">
+                            <hr>
+
+                            <div class='howToIng'>
+                                <h3>Produkti</h3>
+                                <ul class="ingred-list ">
+                                    <li>2 red onions </li>
+                                    <li>2 cloves of garlic </li>
+                                    <li>1 fresh red chilli </li>
+                                    <li>2 large carrots </li>
+                                    <li>olive oil </li>
+                                    <li>1 heaped teaspoon sweet smoked paprika </li>
+                                    <li>1 level teaspoon cumin seeds </li>
+                                    <li>1 level teaspoon dried chilli flakes </li>
+                                    <li>6 medium sweet potatoes </li>
+                                    <li> 1 x 700 ml jar of passata </li>
+                                    <li>2 x 400 g tins of mixed beans </li>
+                                    <li>100 ml quality BBQ sauce </li>
+                                    <li>a few sprigs of fresh rosemary </li>
+                                    <li>½ a loaf of ciabatta or stale bread </li>
+                                    <li>40 g Cheddar cheese , optional </li>
+                                    <li>fat-free natural yoghurt , to serve </li>
+                                </ul>
+                            </div>
+                            <div class='howToMethod'>
+                                <h3>Nachin Na prigotvqne</h3>
+                                <ol>
+                                    <li>Preheat the oven to 180°C/350°F/gas 4.</li>
+                                    <li>Peel the onions and garlic, then finely slice with the chilli. Peel and chop the carrots.
+                                        Put all these into a large roasting tray and place on a medium heat with a lug of
+                                        oil, the paprika, cumin and chilli flakes. Cook for 20 minutes, or until softened,
+                                        stirring regularly.</li>
+                                    <li>Meanwhile, scrub the sweet potatoes clean, then rub them with a little oil, sea salt
+                                        and black pepper, place on a baking tray and put aside.</li>
+                                    <li>When the time’s up, stir the passata into the tray, add a splash of water to the empty
+                                        jar, swirl it around and pour it in along with the beans (juice and all). Drizzle
+                                        over the BBQ sauce, season lightly and stir well.</li>
+                                    <li>Pick and roughly chop the rosemary leaves, toss in a little oil and sprinkle over the
+                                        top, then place in the oven for around 1 hour, or until bubbling, baked and gorgeous,
+                                        adding a splash or two of water to loosen, if needed.</li>
+                                    <li>Put the tray of sweet potatoes into the oven for the same amount of time, or until soft
+                                        and cooked through.</li>
+                                    <li>Around 20 minutes before the beans are ready, tear the bread into rough chunks and toss
+                                        with a drizzle of oil in a roasting tray.</li>
+                                    <li>Grate over the Cheddar (if using), then place on the bottom shelf of the oven for around
+                                        15 minutes, or until crispy and golden, to make croutons.</li>
+                                    <li>Remove everything from the oven, tear up or squidge open the potatoes, and serve with
+                                        the beans, dollops of yoghurt and the homemade croutons to mop up that delicious
+                                        sauce, with a simple green salad on the side.</li>
+                                </ol>
+                            </div>
+                            
+                        <!-- <div class='commentSection'>
+                                <h2>Coments</h2>
+                                <span>Cout Of coments</span><br>
+                                <img id='user-coments-img' src="#" alt="userImg">
+                                <textarea class='comentArea' name="comment" form="usrform" placeholder="Enter your comment"></textarea><br>
+                                <button class='addComment'>Coment</button>
+                            </div> -->
+                        <article>
+                            <article class='thisRecipe'>
+                                <img class="recipeImg" src="assets/images/slide3.jpeg" alt="dneska">
+                                <h2>Pile</h2>
+                                <span>Dopulnitelna informaciq</span>
+                                <hr>
+                                <h3>Kratko opisanie</h3><br>
+                                <p>aifjwpijfpawjf</p><br>
+                                <br>
+                                <hr>
+                                <ul>
+                                    <li>Vremetraene</li>
+                                    <li>Trudnost</li>
+                                    <li>porcii</li>
+                                </ul><br>
+                                <h3>Tip recepta</h3><br>
+                                <span>Veg/mesna/desert</span><br>
+                                <div class="likes">
+                                    <img src="assets/images/Favorite - Add.png" alt="awdawd">
+                                    <img src="assets/images/Like.png" alt="awdawd">
+                                </div>
+
+
+                                <div class="howTo">
+                                    <hr>
+
+                                    <div class='howToIng'>
+                                        <h3>Produkti</h3>
+                                        <ul class="ingred-list ">
+                                            <li>2 red onions </li>
+                                            <li>2 cloves of garlic </li>
+                                            <li>1 fresh red chilli </li>
+                                            <li>2 large carrots </li>
+                                            <li>olive oil </li>
+                                            <li>1 heaped teaspoon sweet smoked paprika </li>
+                                            <li>1 level teaspoon cumin seeds </li>
+                                            <li>1 level teaspoon dried chilli flakes </li>
+                                            <li>6 medium sweet potatoes </li>
+                                            <li> 1 x 700 ml jar of passata </li>
+                                            <li>2 x 400 g tins of mixed beans </li>
+                                            <li>100 ml quality BBQ sauce </li>
+                                            <li>a few sprigs of fresh rosemary </li>
+                                            <li>½ a loaf of ciabatta or stale bread </li>
+                                            <li>40 g Cheddar cheese , optional </li>
+                                            <li>fat-free natural yoghurt , to serve </li>
+                                        </ul>
+                                    </div>
+                                    <div class='howToMethod'>
+                                        <h3>Nachin Na prigotvqne</h3>
+                                        <ol>
+                                            <li>Preheat the oven to 180°C/350°F/gas 4.</li>
+                                            <li>Peel the onions and garlic, then finely slice with the chilli. Peel and chop
+                                                the carrots. Put all these into a large roasting tray and place on a medium
+                                                heat with a lug of oil, the paprika, cumin and chilli flakes. Cook for 20
+                                                minutes, or until softened, stirring regularly.</li>
+                                            <li>Meanwhile, scrub the sweet potatoes clean, then rub them with a little oil, sea
+                                                salt and black pepper, place on a baking tray and put aside.</li>
+                                            <li>When the time’s up, stir the passata into the tray, add a splash of water to
+                                                the empty jar, swirl it around and pour it in along with the beans (juice
+                                                and all). Drizzle over the BBQ sauce, season lightly and stir well.</li>
+                                            <li>Pick and roughly chop the rosemary leaves, toss in a little oil and sprinkle
+                                                over the top, then place in the oven for around 1 hour, or until bubbling,
+                                                baked and gorgeous, adding a splash or two of water to loosen, if needed.</li>
+                                            <li>Put the tray of sweet potatoes into the oven for the same amount of time, or
+                                                until soft and cooked through.</li>
+                                            <li>Around 20 minutes before the beans are ready, tear the bread into rough chunks
+                                                and toss with a drizzle of oil in a roasting tray.</li>
+                                            <li>Grate over the Cheddar (if using), then place on the bottom shelf of the oven
+                                                for around 15 minutes, or until crispy and golden, to make croutons.</li>
+                                            <li>Remove everything from the oven, tear up or squidge open the potatoes, and serve
+                                                with the beans, dollops of yoghurt and the homemade croutons to mop up that
+                                                delicious sauce, with a simple green salad on the side.</li>
+                                        </ol>
+                                    </div>
+                                    <hr>
+                                
+                                <!-- <div class='commentSection'>
+                                                <h2>Coments</h2>
+                                                <span>Cout Of coments</span><br>
+                                                <img id='user-coments-img' src="#" alt="userImg">
+                                                <textarea class='comentArea' name="comment" form="usrform" placeholder="Enter your comment"></textarea><br>
+                                                <button class='addComment'>Coment</button>
+                                            </div> -->
+                                 <article>
+            </section>
+
+            <section id='recipes'>
+                <h1>Recepti</h1>
+                <div id="search">
+                    <form action="/action_page.php">
+                        <input type="text," id="search" placeholder="Search...">
+                        <select id='searchSelect' name="searchBy">
+                            <option disabled selected value="">разширено</option>
+                            <option value="all">Всички</option>
+                            <option value="produkt">Продукт</option>
+                            <option value="podpravka">Подправка</option>
+                            <option value="naiHaresvani">НайХаресвани</option>
+                            <option value="lesni">Лесни</option>
+                            <option value="trudni">Трудни</option>
+                        </select>
+                    </form>
+                    <button id='howToSearch'>Search</button>
+
+                </div>
+
+
+                <div class="cat-container">
+                    <img id='healths' src="assets/images/helthy-category.jpg" alt="" class="categori-img">
+                    <div>
+                        <h3>Здравословни</h3>
+                    </div>
+                </div>
+
+                <div id='bfs' class="cat-container">
+                    <img src="assets/images/breakfast-category.jpeg" alt="" class="categori-img">
+                    <div>
+                        <h3>Закуски</h3>
+                    </div>
+                </div>
+
+                <div id='veges' class="cat-container">
+                    <img src="assets/images/slide1.jpeg" alt="" class="categori-img">
+                    <div>
+                        <h3>Вегетариански</h3>
+                    </div>
+                </div>
+
+
+
+                <div id='meats' class="cat-container">
+                    <img src="assets/images/meat-category.jpeg" alt="" class="categori-img">
+                    <div>
+                        <h3>Месни</h3>
+                    </div>
+                </div>
+                <div id='manyLikes'>
+
+                </div>
+                <div id='easyRec'>
+
+                </div>
+                <div id='hardRec'>
+
+                </div>
+                <div id='manyLikes'>
+
+                </div>
+                <div id='sortRecipesMeats'>
+
+                </div>
+                <div id='sortRecipesHealth'>
+
+                </div>
+                <div id='sortRecipesVegs'>
+
+                </div>
+                <div id='sortRecipesBrfast'>
+
+                </div>
+
+                <div id='cocktails' class="cat-container">
+                    <img src="assets/images/cocktails-category.jpeg" alt="" class="categori-img">
+                    <div>
+                        <h3>Коктейли</h3>
+                    </div>
+                </div>
+                <div id='deserts' class="cat-container">
+                    <img src="assets/images/desert-category.jpeg" alt="" class="categori-img">
+                    <div>
+                        <h3>Десерти</h3>
+                    </div>
+                </div>
+                <div id='salat' class="cat-container">
+                    <img src="assets/images/helthy-category.jpg" alt="" class="categori-img">
+                    <div>
+                        <h3>Салати</h3>
+                    </div>
+                </div>
+                <div id='mainMeal' class="cat-container">
+                    <img src="assets/images/helthy-category.jpg" alt="" class="categori-img">
+                    <div>
+                        <h3>Основни</h3>
+                    </div>
+                </div>
+
+                </div>
+
+
+
+            </section>
+            <div id='theShop'>
+                <div id='wrapper2'>
+                    <div class='block-element'>
+
+                        <!-- Top info for shopping and login form -->
+                        <div id='forOrder'>
+                            <span>За поръчка: <img src="assets/images/telephone.png" alt="" width="15px"/> 0888 800 800</span>
+                        </div>
+
+                        <!-- Bon Appetit logo -->
+                        <div><img src="assets/images/bonap.png" alt="logo" width="200px" id='logo-header' /></div>
+
+                        <!-- Shopping cart info -->
+                        <div id='shoping-cart'>
+                            <div class="top-cart">
+                                <img src="assets/images/shopping-cart.png" alt="kolichka" width="30" height="auto" />
+                                <span class="empty">Количка&nbsp;  <span class="price">0,00</span>&nbsp;лв.</span>
+                            </div>
+                            <div class="cartView" style="display:none;">
+                                <p id='cart-content'>Нямате добавени продукти в количката</p>
+                            </div>
+                        </div>
+
+                        <!-- Type products - navigation -->
+                        <div id='navShop'>
+                            <ul>
+                                <li id='allProducts'><a href='#'>Всички продукти</a></li>
+                                <li id='el'><a href='#'>Електроуреди</a></li>
+                                <li id='cut'><a href='#'>За рязане</a></li>
+                                <li id='kitchen'><a href='#'>За кухнята</a></li>
+                                <li><input name='product' id='searchProduct' type="text" placeholder="Търси продукт" /></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <main class='block-element'>
+                        <!-- Title on top of the main -->
+                        <div class="page-title category-title">
+                            <h1 class="main-area-title">Бон Апети продукти</h1>
+                        </div>
+
+                        <!-- Sort by name and price and Show on the page -->
+                        <div class="sort-by">
+                            <label>Сортирай по:</label>
+                            <select>
+                                <option value='name'>Име</option>
+                                <option value='price' selected="selected">Цена</option>
+                                </select>
+                        </div>
+
+                        <div class="pager">
+                            <div class="limiter">
+                                <span class="visible-desktop">
+                                <label>Покажи</label>
+                                <select>
+                                    <option value="9" selected="selected">9</option>
+                                    <option value="12">12</option>
+                                </select> на страница 
+                                </span>
+                            </div>
+
+                            <div class="pages">
+                                <strong></strong>
+                                <ol>
+                                    <li class="current">1</li>
+                                    <li><a href="#2">2</a></li>
+                                </ol>
+                            </div>
+                        </div>
+                        <button id='nazadotshopa'>НАЗАД КЪМ РЕЦЕПТИТЕ</button>
+                        <!-- Product box -->
+
+                        <div id='namereniProducti'></div>
+                        <div class="category-products">
+                            <ul class="products">
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#lujichki6" title="Комплект от 6 бр. лъжички WAS 14,5 см" class="product-image" style="position: relative;">
+                                            <img src="assets/images/lujichki6.jpg" alt="Комплект лъжички">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#lujichki6" title="Комплект от 6 бр. лъжички WAS 14,5 см">Комплект от 6 бр. лъжички WAS 14,5 см</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">1.07</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#plastmasovakutiq" title="Пластмасова кутия за съхранение Gondol Bonny 0,5" class="product-image" style="position: relative;">
+                                            <img src="assets/images/plastmasovaKutiq.jpg" alt="Комплект лъжички">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#plastmasovakutiq" title="Пластмасова кутия за съхранение Gondol Bonny 0,5">Пластмасова кутия за съхранение Gondol Bonny 0,5</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">1.47</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#cedka" title="Цедка за чай Blex 7 см" class="product-image" style="position: relative;">
+                                            <img src="assets/images/cedka.jpg" alt="Цедка за чай Blex 7 см">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#cedka" title="Цедка за чай Blex 7 см">Цедка за чай Blex 7 см</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">2.07</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#shaker" title="Пластмасов шейкър Gondol 0,5" class="product-image" style="position: relative;">
+                                            <img src="assets/images/shaker.jpg" alt="Пластмасов шейкър Gondol 0,5">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#shaker" title="Пластмасов шейкър Gondol 0,5">Пластмасов шейкър Gondol 0,5</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">2.17</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#olioiocet" title="Бутилка за олио или оцет Zeller 19728" class="product-image" style="position: relative;">
+                                            <img src="assets/images/olioiocet.jpg" alt="Бутилка за олио или оцет Zeller 19728">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#olioiocet" title="Бутилка за олио или оцет Zeller 19728">Бутилка за олио или оцет Zeller 19728</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">2.77</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#bottle_set" title="Комплект за олио и оцет Kitchen Craft Italian Collection 500 мл" class="product-image" style="position: relative;">
+                                            <img src="assets/images/bottle_set.jpg" alt="Комплект за олио и оцет Kitchen Craft Italian Collection 500 мл">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#bottle_set" title="Комплект за олио и оцет Kitchen Craft Italian Collection 500 мл">Комплект за олио и оцет Kitchen Craft Italian Collection 500 мл</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">41.97</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#postavkaHartiq" title="Поставка за кухнеска хартия и фолио Fackelmann" class="product-image" style="position: relative;">
+                                            <img src="assets/images/postavkaHartiq.jpg" alt="Поставка за кухнеска хартия и фолио Fackelmann">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="postavkaHartiq">
+                                            <a href="#bottle_set" title="Поставка за кухнеска хартия и фолио Fackelmann">Поставка за кухнеска хартия и фолио Fackelmann</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">44.77</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="elUred">
+                                    <div class="product-box">
+                                        <a href="#bosch-toster" title="Тостер Bosch TAT6A001" class="product-image" style="position: relative;">
+                                            <img src="assets/images/bosch-toster.jpg" alt="Тостер Bosch TAT6A001">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#bosch-toster" title="Тостер Bosch TAT6A001">Тостер Bosch TAT6A001</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">88.97</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#zaharnica" title="Захарница с капак и лъжичка WMF Barista" class="product-image" style="position: relative;">
+                                            <img src="assets/images/zaharnica.jpg" alt="Захарница с капак и лъжичка WMF Barista">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#zaharnica" title="Захарница с капак и лъжичка WMF Barista">Захарница с капак и лъжичка WMF Barista</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">45.99</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#tiganUsmivka" title="Мини тиган 'Усмивка' Ibili 450401" class="product-image" style="position: relative;">
+                                            <img src="assets/images/tiganUsmivka.jpg" alt="Мини тиган 'Усмивка' Ibili 450401">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#tiganUsmivka" title="Мини тиган 'Усмивка' Ibili 450401">Мини тиган 'Усмивка' Ibili 450401</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">7.67</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#kaserola" title="Касерола с капак Cerutil R0271/TR077, 750 мл" class="product-image" style="position: relative;">
+                                            <img src="assets/images/kaserola.jpg" alt="Касерола с капак Cerutil R0271/TR077, 750 мл">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#kaserola" title="Касерола с капак Cerutil R0271/TR077, 750 мл">Касерола с капак Cerutil R0271/TR077, 750 мл</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">10.47</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#keramichnaTava" title="Керамична тава Vista Alegre cook&serve 29 см" class="product-image" style="position: relative;">
+                                            <img src="assets/images/keramichnaTava.jpg" alt="Керамична тава Vista Alegre cook&serve 29 см">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#keramichnaTava" title="Керамична тава Vista Alegre cook&serve 29 см">Керамична тава Vista Alegre cook&serve 29 см</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">19.57</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#konteinerZelenchuci" title="Контейнер за зеленчуци Snips 25,5 х 20 х 17,5 см" class="product-image" style="position: relative;">
+                                            <img src="assets/images/konteinerZelenchuci.jpg" alt="Контейнер за зеленчуци Snips 25,5 х 20 х 17,5 см">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#konteinerZelenchuci" title="Контейнер за зеленчуци Snips 25,5 х 20 х 17,5 см">Контейнер за зеленчуци Snips 25,5 х 20 х 17,5 см</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">17.67</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#gotvene5chasti" title="Комплект съдове за готвене oт 5 части WMF Provence Plus" class="product-image" style="position: relative;">
+                                            <img src="assets/images/gotvene5chasti.jpg" alt="Комплект съдове за готвене oт 5 части WMF Provence Plus">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#gotvene5chasti" title="Комплект съдове за готвене oт 5 части WMF Provence Plus">Комплект съдове за готвене oт 5 части WMF Provence Plus</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">349.97</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#formaKeks" title="Форма за печене Tefal Easy Grip Kugelhopf 22 см" class="product-image" style="position: relative;">
+                                            <img src="assets/images/formaKeks.jpg" alt="Форма за печене Tefal Easy Grip Kugelhopf 22 см">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#formaKeks" title="Форма за печене Tefal Easy Grip Kugelhopf 22 см">Форма за печене Tefal Easy Grip Kugelhopf 22 см</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">27.87</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+
+                                <li class="kitchen">
+                                    <div class="product-box">
+                                        <a href="#baking_sheet" title="Плоча за печене Jamie Oliver 30,5 х 34 см" class="product-image" style="position: relative;">
+                                            <img src="assets/images/baking_sheet.jpg" alt="Плоча за печене Jamie Oliver 30,5 х 34 см">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#baking_sheet" title="Плоча за печене Jamie Oliver 30,5 х 34 см">Плоча за печене Jamie Oliver 30,5 х 34 см</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">38.98</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+
+                                <li class="cut">
+                                    <div class="product-box">
+                                        <a href="#protectorPrysti" title="Протектор за пръсти Rexton" class="product-image" style="position: relative;">
+                                            <img src="assets/images/protectorPrysti.jpg" alt="Протектор за пръсти Rexton">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#protectorPrysti" title="Протектор за пръсти Rexton">Протектор за пръсти Rexton</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">0.97</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+
+                                <li class="cut">
+                                    <div class="product-box">
+                                        <a href="#chikiika" title="Джобен нож Fackelmann Nirosta" class="product-image" style="position: relative;">
+                                            <img src="assets/images/chikiika.jpg" alt="Джобен нож Fackelmann Nirosta">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#chikiika" title="Джобен нож Fackelmann Nirosta">Джобен нож Fackelmann Nirosta</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">11.47</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="cut">
+                                    <div class="product-box">
+                                        <a href="#avokadoNoj" title="Комплект от 2 броя ножове за авокадо и киви Ibili" class="product-image" style="position: relative;">
+                                            <img src="assets/images/avokadoNoj.jpg" alt="Комплект от 2 броя ножове за авокадо и киви Ibili">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#avokadoNoj" title="Комплект от 2 броя ножове за авокадо и киви Ibili">Комплект от 2 броя ножове за авокадо и киви Ibili</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">6.57</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="cut">
+                                    <div class="product-box">
+                                        <a href="#sirenaNojove" title="Сет ножове за сирена Zassenhous, 4 броя" class="product-image" style="position: relative;">
+                                            <img src="assets/images/sirenaNojove.jpg" alt="Сет ножове за сирена Zassenhous, 4 броя">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#sirenaNojove" title="Сет ножове за сирена Zassenhous, 4 броя">Сет ножове за сирена Zassenhous, 4 броя</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">16.07</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+
+                                <li class="cut">
+                                    <div class="product-box">
+                                        <a href="#nojSostyrvryh" title="Универсален нож Wusthof Silverpoint 12 см (с остър връх)" class="product-image" style="position: relative;">
+                                            <img src="assets/images/nojSostyrvryh.jpg" alt="Универсален нож Wusthof Silverpoint 12 см (с остър връх)">
+                                        </a>
+
+                                        <div class="actions">
+                                            <button type="button" title="" class="button-buy" )>Купи</button>
+                                            <button type="button" title="" class="button-view" )>Преглед</button>
+                                        </div>
+
+                                        <div class="product-name">
+                                            <a href="#nojSostyrvryh" title="Универсален нож Wusthof Silverpoint 12 см (с остър връх)">Универсален нож Wusthof Silverpoint 12 см (с остър връх)</a>
+                                        </div>
+
+                                        <div class="price-box">
+                                            <span><span class="price">16.37</span>&nbsp;лв.</span>
+                                        </div>
+                                        <br>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </main>
+                </div>
+            </div>
+            <div id='contactUs-content' class='contactUs'>
+                <!-- Когато се кликне на За нас -->
+                <article>
+                    <h2>Свържи се с нас</h2>
+                    <p><em>Владимир Вецев</em></p>
+                    <p>тел: +359 888 154 335</p>
+                    <p>vladimirvetsev@gmail.com</p>
+                    <hr/>
+                    <p><em>Гергана Николова</em></p>
+                    <p>тел: +359 883 555 596</p>
+                    <p>gnikolova0709@gmail.com</p>
+                </article>
+                <article>
+                    <form id="contact_form" action="#" method="POST">
+                        <div class="row">
+                            <label for="name">Твоете име:</label><br />
+                            <input id="name" class="input" name="name" type="text" value="" size="30" /><br />
+                        </div>
+                        <div class="row">
+                            <label for="email">Твоята поща:</label><br />
+                            <input id="email" class="input" name="email" type="text" value="" size="30" /><br />
+                        </div>
+                        <div class="row">
+                            <label for="message">Твоето съобщение:</label><br />
+                            <textarea id="message" class="input" name="message" rows="7" cols="30"></textarea><br />
+                        </div>
+                        <input type="hidden" name="action" value="submit" />
+                        <input id="submit_button" type="submit" value="Изпрати" />
+                    </form>
+                </article>
+                <article>
+                    <h2>Адрес</h2>
+                    <div>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m23!1m12!1m3!1d2467.087377090216!2d23.290172392104058!3d42.66394357661928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m8!3e6!4m0!4m5!1s0x40aa84ea538dfdef%3A0xd78af264a1dfcc28!2z0JjQvdGE0LjQuNC90LjRgtC4INCi0LDRg9GK0YAsIDE0MDQg0LrQsi4g0JzQsNC90LDRgdGC0LjRgNGB0LrQuCDQu9C40LLQsNC00LgsINCh0L7RhNC40Y8!3m2!1d42.6641409!2d23.2879827!5e0!3m2!1sbg!2sbg!4v1507501994182"
+                            width="500" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+                    </div>
+                    <p>Бул. България 69<br/> Манастирски ливади<br/> София, България</p>
+                </article>
+
+                <button id='nazade' width='100px'>НАЗАД КЪМ РЕЦЕПТИТЕ</button>
+
+                <section id='Make an recipe '>
+                    <article></article>
+                    <article></article>
+                    <article></article>
+                    <article></article>
+                </section>
+        </main>
+        <!--Optional side menu/content for more info/adds and so on  -->
+
+        <footer>
+            <!-- Footer -->
+            <div id="footer">
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <div class="newsletter-title">Абонирай се за нашия месечен бюлетин.</div><br/>
+                    <div class="newsletter-form">
+                        <form id="newsletterForm">
+                            <div id="newsletter-input-and-submit">
+                                <input type="text" class="newsletter-input" name="newsletterEmail" value="" placeholder=" Имейл адрес">
+                                <button class="newsletter-submit-button">Абонирай ме</button>
+                            </div>
+                            <br/>
+                            <div class="custom-checkbox">
+                                <input type="checkbox" checked name="newsletterPrivacy" id="newsletterPrivacy" value="on" />
+                                <span>Прочетох и потвърждавам</span><a href="usloviq.pdf"> Условията</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <!-- social media logos -->
+                <div class="icon-contact" id='icons-footer'>
+                    <ul>
+                        <li><a><i class="fa fa-facebook" aria-hidden="true"></i> </a> </li>
+                        <li><a><i class="fa fa-google-plus" aria-hidden="true"></i></a> </li>
+                        <li><a><i class="fa fa-instagram" aria-hidden="true"></i></a> </li>
+                        <li><a><i class="fa fa-twitter" aria-hidden="true"></i></a> </li>
+                        <li><a><i class="fa fa-linkedin" aria-hidden="true"></i></a> </li>
+                    </ul>
+                </div>
+                <!-- Logo and copyright -->
+                <div class="footer-logo">
+                    <div><a><img class="footer-logo-image" width="120" src="assets/images/bon_appetit_logo1.png" alt="Bon-Appetit"></a>
+                    </div>
+                    <div class="copyright">&copy; 2017 Всички права запазени. <br/>Най-вкусните рецепти от Влади и Гери.</div>
+                </div>
+            </div>
+        </footer>
+        </div>
+</body>
+
+</html>
